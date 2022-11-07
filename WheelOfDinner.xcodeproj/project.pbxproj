@@ -16,6 +16,8 @@
 		760E46E429134F6000C2FA15 /* WheelOfDinnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760E46E329134F6000C2FA15 /* WheelOfDinnerTests.swift */; };
 		760E46EE29134F6000C2FA15 /* WheelOfDinnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760E46ED29134F6000C2FA15 /* WheelOfDinnerUITests.swift */; };
 		760E46F029134F6000C2FA15 /* WheelOfDinnerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760E46EF29134F6000C2FA15 /* WheelOfDinnerUITestsLaunchTests.swift */; };
+		761895CD29189ED2000C137E /* YelpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761895CC29189ED2000C137E /* YelpAPI.swift */; };
+		761895CF2918A415000C137E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761895CE2918A415000C137E /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		760E46E929134F6000C2FA15 /* WheelOfDinnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WheelOfDinnerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		760E46ED29134F6000C2FA15 /* WheelOfDinnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelOfDinnerUITests.swift; sourceTree = "<group>"; };
 		760E46EF29134F6000C2FA15 /* WheelOfDinnerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelOfDinnerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		761895CC29189ED2000C137E /* YelpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPI.swift; sourceTree = "<group>"; };
+		761895CE2918A415000C137E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +103,10 @@
 		760E46CB29134F5F00C2FA15 /* WheelOfDinner */ = {
 			isa = PBXGroup;
 			children = (
-				760E46CC29134F5F00C2FA15 /* AppDelegate.swift */,
-				760E46CE29134F5F00C2FA15 /* SceneDelegate.swift */,
-				760E46D029134F5F00C2FA15 /* ViewController.swift */,
-				760E46D229134F5F00C2FA15 /* Main.storyboard */,
+				760E46FF291351E900C2FA15 /* Services */,
+				760E46FE291351D400C2FA15 /* Controllers */,
+				760E46FD2913517800C2FA15 /* Views */,
+				760E46FC2913517000C2FA15 /* Models */,
 				760E46D529134F6000C2FA15 /* Assets.xcassets */,
 				760E46D729134F6000C2FA15 /* LaunchScreen.storyboard */,
 				760E46DA29134F6000C2FA15 /* Info.plist */,
@@ -125,6 +129,40 @@
 				760E46EF29134F6000C2FA15 /* WheelOfDinnerUITestsLaunchTests.swift */,
 			);
 			path = WheelOfDinnerUITests;
+			sourceTree = "<group>";
+		};
+		760E46FC2913517000C2FA15 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		760E46FD2913517800C2FA15 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				760E46D229134F5F00C2FA15 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		760E46FE291351D400C2FA15 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				760E46D029134F5F00C2FA15 /* ViewController.swift */,
+				760E46CE29134F5F00C2FA15 /* SceneDelegate.swift */,
+				760E46CC29134F5F00C2FA15 /* AppDelegate.swift */,
+				761895CE2918A415000C137E /* MapViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		760E46FF291351E900C2FA15 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				761895CC29189ED2000C137E /* YelpAPI.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +296,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				761895CD29189ED2000C137E /* YelpAPI.swift in Sources */,
 				760E46D129134F5F00C2FA15 /* ViewController.swift in Sources */,
 				760E46CD29134F5F00C2FA15 /* AppDelegate.swift in Sources */,
+				761895CF2918A415000C137E /* MapViewController.swift in Sources */,
 				760E46CF29134F5F00C2FA15 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +480,7 @@
 				DEVELOPMENT_TEAM = RQQFS8372V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WheelOfDinner/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Wheel Of Dinner";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -468,6 +509,7 @@
 				DEVELOPMENT_TEAM = RQQFS8372V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WheelOfDinner/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Wheel Of Dinner";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
