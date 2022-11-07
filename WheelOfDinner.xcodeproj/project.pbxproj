@@ -18,6 +18,8 @@
 		760E46F029134F6000C2FA15 /* WheelOfDinnerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760E46EF29134F6000C2FA15 /* WheelOfDinnerUITestsLaunchTests.swift */; };
 		761895CD29189ED2000C137E /* YelpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761895CC29189ED2000C137E /* YelpAPI.swift */; };
 		761895CF2918A415000C137E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761895CE2918A415000C137E /* MapViewController.swift */; };
+		761895D12918D8EF000C137E /* MapContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761895D02918D8EF000C137E /* MapContentViewController.swift */; };
+		761895D42918DCA0000C137E /* FloatingPanel in Frameworks */ = {isa = PBXBuildFile; productRef = 761895D32918DCA0000C137E /* FloatingPanel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,7 @@
 		760E46EF29134F6000C2FA15 /* WheelOfDinnerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelOfDinnerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		761895CC29189ED2000C137E /* YelpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPI.swift; sourceTree = "<group>"; };
 		761895CE2918A415000C137E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		761895D02918D8EF000C137E /* MapContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				761895D42918DCA0000C137E /* FloatingPanel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +157,7 @@
 				760E46CE29134F5F00C2FA15 /* SceneDelegate.swift */,
 				760E46CC29134F5F00C2FA15 /* AppDelegate.swift */,
 				761895CE2918A415000C137E /* MapViewController.swift */,
+				761895D02918D8EF000C137E /* MapContentViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -181,6 +186,9 @@
 			dependencies = (
 			);
 			name = WheelOfDinner;
+			packageProductDependencies = (
+				761895D32918DCA0000C137E /* FloatingPanel */,
+			);
 			productName = WheelOfDinner;
 			productReference = 760E46C929134F5F00C2FA15 /* WheelOfDinner.app */;
 			productType = "com.apple.product-type.application";
@@ -253,6 +261,9 @@
 				Base,
 			);
 			mainGroup = 760E46C029134F5F00C2FA15;
+			packageReferences = (
+				761895D22918DCA0000C137E /* XCRemoteSwiftPackageReference "FloatingPanel" */,
+			);
 			productRefGroup = 760E46CA29134F5F00C2FA15 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -297,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				761895CD29189ED2000C137E /* YelpAPI.swift in Sources */,
+				761895D12918D8EF000C137E /* MapContentViewController.swift in Sources */,
 				760E46D129134F5F00C2FA15 /* ViewController.swift in Sources */,
 				760E46CD29134F5F00C2FA15 /* AppDelegate.swift in Sources */,
 				761895CF2918A415000C137E /* MapViewController.swift in Sources */,
@@ -644,6 +656,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		761895D22918DCA0000C137E /* XCRemoteSwiftPackageReference "FloatingPanel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SCENEE/FloatingPanel.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		761895D32918DCA0000C137E /* FloatingPanel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 761895D22918DCA0000C137E /* XCRemoteSwiftPackageReference "FloatingPanel" */;
+			productName = FloatingPanel;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 760E46C129134F5F00C2FA15 /* Project object */;
 }

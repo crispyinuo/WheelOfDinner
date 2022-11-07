@@ -8,16 +8,26 @@
 import UIKit
 import MapKit
 import CoreLocation
+import FloatingPanel
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, FloatingPanelControllerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
     let manager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //Floating Panel
+        let fpc = FloatingPanelController()
+        fpc.delegate = self
+        
+        guard let contentVC = storyboard?.instantiateViewController(identifier: "fpc_content") as? MapContentViewController else{
+            return
+        }
+        fpc.set(contentViewController: contentVC)
+        fpc.addPanel(toParent: self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,15 +56,4 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         mapView.addAnnotation(pin)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
