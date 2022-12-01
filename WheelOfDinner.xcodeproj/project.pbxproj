@@ -20,6 +20,19 @@
 		761895CF2918A415000C137E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761895CE2918A415000C137E /* MapViewController.swift */; };
 		761895D12918D8EF000C137E /* MapContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761895D02918D8EF000C137E /* MapContentViewController.swift */; };
 		761895D42918DCA0000C137E /* FloatingPanel in Frameworks */ = {isa = PBXBuildFile; productRef = 761895D32918DCA0000C137E /* FloatingPanel */; };
+		76350BFF2939711400FFF9FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76350BFE2939711400FFF9FD /* GoogleService-Info.plist */; };
+		76E491F9291C9EE4003254E7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 76E491F8291C9EE4003254E7 /* FirebaseAnalytics */; };
+		76E491FB291C9EE4003254E7 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 76E491FA291C9EE4003254E7 /* FirebaseAnalyticsSwift */; };
+		76E491FD291C9EE4003254E7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 76E491FC291C9EE4003254E7 /* FirebaseAuth */; };
+		76E491FF291C9EE4003254E7 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 76E491FE291C9EE4003254E7 /* FirebaseAuthCombine-Community */; };
+		76E49201291C9EE4003254E7 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 76E49200291C9EE4003254E7 /* FirebaseDatabase */; };
+		76E49203291C9EE4003254E7 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 76E49202291C9EE4003254E7 /* FirebaseDatabaseSwift */; };
+		76E49205291C9EE4003254E7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 76E49204291C9EE4003254E7 /* FirebaseFirestore */; };
+		76E49207291C9EE4003254E7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 76E49206291C9EE4003254E7 /* FirebaseFirestoreCombine-Community */; };
+		76E49209291C9EE4003254E7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 76E49208291C9EE4003254E7 /* FirebaseFirestoreSwift */; };
+		76E4920B291C9EE4003254E7 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 76E4920A291C9EE4003254E7 /* FirebaseStorage */; };
+		76E4920D291C9EE4003254E7 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 76E4920C291C9EE4003254E7 /* FirebaseStorageCombine-Community */; };
+		76E4920F291C9F39003254E7 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E4920E291C9F39003254E7 /* Firebase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +69,8 @@
 		761895CC29189ED2000C137E /* YelpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPI.swift; sourceTree = "<group>"; };
 		761895CE2918A415000C137E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		761895D02918D8EF000C137E /* MapContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContentViewController.swift; sourceTree = "<group>"; };
+		76350BFE2939711400FFF9FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		76E4920E291C9F39003254E7 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +78,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76E49203291C9EE4003254E7 /* FirebaseDatabaseSwift in Frameworks */,
+				76E49201291C9EE4003254E7 /* FirebaseDatabase in Frameworks */,
+				76E491FB291C9EE4003254E7 /* FirebaseAnalyticsSwift in Frameworks */,
+				76E49207291C9EE4003254E7 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				76E491F9291C9EE4003254E7 /* FirebaseAnalytics in Frameworks */,
+				76E49209291C9EE4003254E7 /* FirebaseFirestoreSwift in Frameworks */,
 				761895D42918DCA0000C137E /* FloatingPanel in Frameworks */,
+				76E49205291C9EE4003254E7 /* FirebaseFirestore in Frameworks */,
+				76E4920B291C9EE4003254E7 /* FirebaseStorage in Frameworks */,
+				76E491FD291C9EE4003254E7 /* FirebaseAuth in Frameworks */,
+				76E4920D291C9EE4003254E7 /* FirebaseStorageCombine-Community in Frameworks */,
+				76E491FF291C9EE4003254E7 /* FirebaseAuthCombine-Community in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +139,7 @@
 				760E46FC2913517000C2FA15 /* Models */,
 				760E46D529134F6000C2FA15 /* Assets.xcassets */,
 				760E46D729134F6000C2FA15 /* LaunchScreen.storyboard */,
+				76350BFE2939711400FFF9FD /* GoogleService-Info.plist */,
 				760E46DA29134F6000C2FA15 /* Info.plist */,
 			);
 			path = WheelOfDinner;
@@ -166,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				761895CC29189ED2000C137E /* YelpAPI.swift */,
+				76E4920E291C9F39003254E7 /* Firebase.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -188,6 +216,17 @@
 			name = WheelOfDinner;
 			packageProductDependencies = (
 				761895D32918DCA0000C137E /* FloatingPanel */,
+				76E491F8291C9EE4003254E7 /* FirebaseAnalytics */,
+				76E491FA291C9EE4003254E7 /* FirebaseAnalyticsSwift */,
+				76E491FC291C9EE4003254E7 /* FirebaseAuth */,
+				76E491FE291C9EE4003254E7 /* FirebaseAuthCombine-Community */,
+				76E49200291C9EE4003254E7 /* FirebaseDatabase */,
+				76E49202291C9EE4003254E7 /* FirebaseDatabaseSwift */,
+				76E49204291C9EE4003254E7 /* FirebaseFirestore */,
+				76E49206291C9EE4003254E7 /* FirebaseFirestoreCombine-Community */,
+				76E49208291C9EE4003254E7 /* FirebaseFirestoreSwift */,
+				76E4920A291C9EE4003254E7 /* FirebaseStorage */,
+				76E4920C291C9EE4003254E7 /* FirebaseStorageCombine-Community */,
 			);
 			productName = WheelOfDinner;
 			productReference = 760E46C929134F5F00C2FA15 /* WheelOfDinner.app */;
@@ -263,6 +302,7 @@
 			mainGroup = 760E46C029134F5F00C2FA15;
 			packageReferences = (
 				761895D22918DCA0000C137E /* XCRemoteSwiftPackageReference "FloatingPanel" */,
+				76E491F7291C9EE4003254E7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 760E46CA29134F5F00C2FA15 /* Products */;
 			projectDirPath = "";
@@ -281,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				760E46D929134F6000C2FA15 /* LaunchScreen.storyboard in Resources */,
+				76350BFF2939711400FFF9FD /* GoogleService-Info.plist in Resources */,
 				760E46D629134F6000C2FA15 /* Assets.xcassets in Resources */,
 				760E46D429134F5F00C2FA15 /* Main.storyboard in Resources */,
 			);
@@ -307,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76E4920F291C9F39003254E7 /* Firebase.swift in Sources */,
 				761895CD29189ED2000C137E /* YelpAPI.swift in Sources */,
 				761895D12918D8EF000C137E /* MapContentViewController.swift in Sources */,
 				760E46D129134F5F00C2FA15 /* ViewController.swift in Sources */,
@@ -487,12 +529,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RQQFS8372V;
+				DEVELOPMENT_TEAM = GJW3JH36GW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WheelOfDinner/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Wheel Of Dinner";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow to view locations";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -503,8 +548,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.WheelOfDinner;
+				PRODUCT_BUNDLE_IDENTIFIER = crispyinuo.WheelOfDinner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -516,12 +562,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RQQFS8372V;
+				DEVELOPMENT_TEAM = GJW3JH36GW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WheelOfDinner/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Wheel Of Dinner";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow to view locations";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -532,8 +581,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.WheelOfDinner;
+				PRODUCT_BUNDLE_IDENTIFIER = crispyinuo.WheelOfDinner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -666,6 +716,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		76E491F7291C9EE4003254E7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -673,6 +731,61 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 761895D22918DCA0000C137E /* XCRemoteSwiftPackageReference "FloatingPanel" */;
 			productName = FloatingPanel;
+		};
+		76E491F8291C9EE4003254E7 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76E491F7291C9EE4003254E7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		76E491FA291C9EE4003254E7 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76E491F7291C9EE4003254E7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		76E491FC291C9EE4003254E7 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76E491F7291C9EE4003254E7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		76E491FE291C9EE4003254E7 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76E491F7291C9EE4003254E7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		76E49200291C9EE4003254E7 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76E491F7291C9EE4003254E7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		76E49202291C9EE4003254E7 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76E491F7291C9EE4003254E7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		76E49204291C9EE4003254E7 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76E491F7291C9EE4003254E7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		76E49206291C9EE4003254E7 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76E491F7291C9EE4003254E7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		76E49208291C9EE4003254E7 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76E491F7291C9EE4003254E7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		76E4920A291C9EE4003254E7 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76E491F7291C9EE4003254E7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		76E4920C291C9EE4003254E7 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76E491F7291C9EE4003254E7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
