@@ -124,10 +124,10 @@
             </objects>
             <point key="canvasLocation" x="-603" y="0.0"/>
         </scene>
-        <!--View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="5kj-Dk-gtW">
             <objects>
-                <viewController id="bBj-jY-VMs" sceneMemberID="viewController">
+                <viewController id="bBj-jY-VMs" customClass="LogInViewController" customModule="WheelOfDinner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iD0-1g-gko">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -159,6 +159,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Don't have an account? Sign Up!"/>
                                 <connections>
+                                    <action selector="SignUpRedirectionDidTapped:" destination="bBj-jY-VMs" eventType="touchUpInside" id="1IU-7z-TNi"/>
                                     <segue destination="CUf-xr-4uB" kind="show" id="UFt-bZ-J3k"/>
                                 </connections>
                             </button>
@@ -170,6 +171,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Log In"/>
+                                <connections>
+                                    <action selector="LogInDidTapped:" destination="bBj-jY-VMs" eventType="touchUpInside" id="7Rg-Xd-OYk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCg-kp-Wp8">
                                 <rect key="frame" x="250" y="484.66666666666669" width="120" height="30.000000000000057"/>
@@ -218,6 +222,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="X10-OD-5Pu"/>
+                    <connections>
+                        <outlet property="EmailTextField" destination="kct-VL-56Q" id="upp-Ev-ide"/>
+                        <outlet property="LogInButton" destination="RER-IV-WxZ" id="goV-Pe-STd"/>
+                        <outlet property="PasswordTextField" destination="lul-U0-Wcd" id="rzc-Gs-OG7"/>
+                        <outlet property="SignUpRedirectButton" destination="qCg-kp-Wp8" id="fqm-pk-IfY"/>
+                        <outlet property="forgetPasswordButton" destination="qCg-kp-Wp8" id="OaB-Im-3Qy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fck-P1-3MA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -440,10 +451,10 @@
             </objects>
             <point key="canvasLocation" x="1895.3846153846152" y="386.72985781990519"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="lZe-d8-Vni">
             <objects>
-                <viewController id="CUf-xr-4uB" sceneMemberID="viewController">
+                <viewController id="CUf-xr-4uB" customClass="SignUpViewController" customModule="WheelOfDinner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7m1-L5-Me8">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -475,6 +486,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Already have an account? Log In!"/>
                                 <connections>
+                                    <action selector="LogInRedirectionDidTapped:" destination="CUf-xr-4uB" eventType="touchUpInside" id="exi-y8-QSy"/>
                                     <segue destination="bBj-jY-VMs" kind="show" id="7Tz-N8-Vvi"/>
                                 </connections>
                             </button>
@@ -486,6 +498,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Register"/>
+                                <connections>
+                                    <action selector="RegisterDidTapped:" destination="CUf-xr-4uB" eventType="touchUpInside" id="6y7-bc-TA6"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CId-KN-fWh">
                                 <rect key="frame" x="151" y="321.66666666666669" width="88" height="30"/>
@@ -531,6 +546,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AFi-Ug-fqf"/>
+                    <connections>
+                        <outlet property="EmailTextField" destination="epc-qo-cqJ" id="oXF-9c-S7R"/>
+                        <outlet property="LogInRedirectionButton" destination="n1r-v1-mvC" id="PvJ-r7-vgu"/>
+                        <outlet property="PasswordTextField" destination="vTd-rL-ZkQ" id="e1Z-5f-Eqi"/>
+                        <outlet property="RegisterButton" destination="Nba-ad-DKw" id="HiT-d3-6gG"/>
+                        <outlet property="UsernameTextField" destination="76e-gP-2me" id="XMH-DE-ac7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JrY-gt-715" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
