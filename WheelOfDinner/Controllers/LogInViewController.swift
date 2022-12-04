@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class LogInViewController: UIViewController {
 
@@ -27,12 +29,58 @@ class LogInViewController: UIViewController {
     
     
     @IBAction func LogInDidTapped(_ sender: UIButton) {
+        // Validate the fields
+        let error = validateFields()
+        
+        if error != nil{
+            showError(error!)
+        }
+        else{
+            // Create cleaned versions of the data
+            let email = self.EmailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let password = self.PasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            // User created successfully, store the username
+            Auth.auth().signIn(withEmail: email, password: password){
+                (result, error) in
+                // Check for errors
+                if error != nil{
+                    self.showError(error!.localizedDescription)
+                }
+                else{
+                    // Transition to the home page
+                    self.transitionToHome()
+                }
+                
+            }
+            
+        }
     }
     
 
     @IBAction func SignUpRedirectionDidTapped(_ sender: UIButton) {
     }
     
+    // if the fields are not correct, return error message
+    func validateFields() -> String?{
+        // Check that all fields are filled in
+        if  EmailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || PasswordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
+            return "Please fill in both fields."
+        }
+        //TODO: check email format
+        return nil
+    }
+    
+    func showError(_ message: String){
+        //TODO: add alert message
+    }
+    
+    func transitionToHome(){
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
+    }
     /*
     // MARK: - Navigation
 
