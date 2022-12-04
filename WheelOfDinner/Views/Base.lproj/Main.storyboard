@@ -334,10 +334,10 @@
             </objects>
             <point key="canvasLocation" x="2761.5384615384614" y="-356.1611374407583"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Home View Controller-->
         <scene sceneID="eon-Xw-ydW">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Wwu-Zx-Yng" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Homepage" automaticallyAdjustsScrollViewInsets="NO" id="Wwu-Zx-Yng" customClass="HomeViewController" customModule="WheelOfDinner" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="nmh-mX-MB5"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T35-wi-Uhy">

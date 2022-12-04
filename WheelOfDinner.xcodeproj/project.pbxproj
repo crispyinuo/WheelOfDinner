@@ -23,6 +23,8 @@
 		76350BFF2939711400FFF9FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76350BFE2939711400FFF9FD /* GoogleService-Info.plist */; };
 		76350C012939752A00FFF9FD /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76350C002939752A00FFF9FD /* LogInViewController.swift */; };
 		76350C032939753B00FFF9FD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76350C022939753B00FFF9FD /* SignUpViewController.swift */; };
+		76350C05293CB27400FFF9FD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76350C04293CB27400FFF9FD /* Constants.swift */; };
+		76350C08293CB31C00FFF9FD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76350C07293CB31C00FFF9FD /* HomeViewController.swift */; };
 		76E491F9291C9EE4003254E7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 76E491F8291C9EE4003254E7 /* FirebaseAnalytics */; };
 		76E491FB291C9EE4003254E7 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 76E491FA291C9EE4003254E7 /* FirebaseAnalyticsSwift */; };
 		76E491FD291C9EE4003254E7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 76E491FC291C9EE4003254E7 /* FirebaseAuth */; };
@@ -74,6 +76,8 @@
 		76350BFE2939711400FFF9FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		76350C002939752A00FFF9FD /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		76350C022939753B00FFF9FD /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		76350C04293CB27400FFF9FD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		76350C07293CB31C00FFF9FD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		76E4920E291C9F39003254E7 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +141,7 @@
 		760E46CB29134F5F00C2FA15 /* WheelOfDinner */ = {
 			isa = PBXGroup;
 			children = (
+				76350C06293CB29700FFF9FD /* Helpers */,
 				760E46FF291351E900C2FA15 /* Services */,
 				760E46FE291351D400C2FA15 /* Controllers */,
 				760E46FD2913517800C2FA15 /* Views */,
@@ -191,6 +196,7 @@
 				761895D02918D8EF000C137E /* MapContentViewController.swift */,
 				76350C002939752A00FFF9FD /* LogInViewController.swift */,
 				76350C022939753B00FFF9FD /* SignUpViewController.swift */,
+				76350C07293CB31C00FFF9FD /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -202,6 +208,14 @@
 				76E4920E291C9F39003254E7 /* Firebase.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		76350C06293CB29700FFF9FD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				76350C04293CB27400FFF9FD /* Constants.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,7 +373,9 @@
 				761895D12918D8EF000C137E /* MapContentViewController.swift in Sources */,
 				760E46D129134F5F00C2FA15 /* ViewController.swift in Sources */,
 				76350C012939752A00FFF9FD /* LogInViewController.swift in Sources */,
+				76350C05293CB27400FFF9FD /* Constants.swift in Sources */,
 				760E46CD29134F5F00C2FA15 /* AppDelegate.swift in Sources */,
+				76350C08293CB31C00FFF9FD /* HomeViewController.swift in Sources */,
 				76350C032939753B00FFF9FD /* SignUpViewController.swift in Sources */,
 				761895CF2918A415000C137E /* MapViewController.swift in Sources */,
 				760E46CF29134F5F00C2FA15 /* SceneDelegate.swift in Sources */,

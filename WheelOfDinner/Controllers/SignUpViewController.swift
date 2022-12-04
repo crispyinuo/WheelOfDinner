@@ -36,19 +36,19 @@ class SignUpViewController: UIViewController {
             showError(error!)
         }
         else{
-            Auth.auth().createUser(withEmail: <#T##String#>, password: <#T##String#>){ [self] (result,err) in
+            // Create cleaned versions of the data
+            let username = self.UsernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let email = self.EmailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let password = self.PasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            // User created successfully, store the username
+            Auth.auth().createUser(withEmail: email, password: password){ [self] (result,err) in
                 // Check for errors
                 if err != nil{
                     self.showError("Error creating user")
                 }
                 else{
                     // Create the user
-                    
-                    // Create cleaned versions of the data
-                    let username = self.UsernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-                    let email = self.EmailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-                    let password = self.PasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-                    // User created successfully, store the username
                     let db = Firestore.firestore()
                     db.collection("users").addDocument(data: ["username":username, "uid":result!.user.uid]){(error) in
                         if error != nil{
@@ -57,7 +57,6 @@ class SignUpViewController: UIViewController {
                     }
                     // Transition to the home page
                     self.transitionToHome()
-                    
                 }
                 
             }
@@ -93,7 +92,10 @@ class SignUpViewController: UIViewController {
     }
     
     func transitionToHome(){
-
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
     }
     
 
