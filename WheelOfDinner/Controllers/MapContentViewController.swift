@@ -64,7 +64,7 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
         
         // if the restaurant is closed
         if let closed = result.is_closed{
-            if(closed){
+            if(closed == true){
                 cell.isOpenLabel.text = "Closed now"
                 cell.isOpenLabel.textColor = UIColor.red
             }else{
