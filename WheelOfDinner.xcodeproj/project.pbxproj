@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0254A0985FDBA596F55605EC /* Pods_WheelOfDinner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792F8F6669413391703DB32C /* Pods_WheelOfDinner.framework */; };
 		76051400293DAD670034807B /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760513FF293DAD670034807B /* LikeViewController.swift */; };
 		76051402293DBA5F0034807B /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76051401293DBA5F0034807B /* ResultViewController.swift */; };
 		76051406293DD23F0034807B /* GooglePlacesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76051405293DD23F0034807B /* GooglePlacesManager.swift */; };
@@ -28,7 +29,6 @@
 		76350C032939753B00FFF9FD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76350C022939753B00FFF9FD /* SignUpViewController.swift */; };
 		76350C05293CB27400FFF9FD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76350C04293CB27400FFF9FD /* Constants.swift */; };
 		76350C08293CB31C00FFF9FD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76350C07293CB31C00FFF9FD /* HomeViewController.swift */; };
-		76350C0B293D6A3300FFF9FD /* ExtensionKit in Frameworks */ = {isa = PBXBuildFile; productRef = 76350C0A293D6A3300FFF9FD /* ExtensionKit */; };
 		76350C0D293D71B100FFF9FD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76350C0C293D71B100FFF9FD /* TableViewCell.swift */; };
 		76350C11293D7A4600FFF9FD /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76350C10293D7A4600FFF9FD /* ResultModel.swift */; };
 		76350C13293D7A9200FFF9FD /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76350C12293D7A9200FFF9FD /* Business.swift */; };
@@ -46,6 +46,8 @@
 		76E4920B291C9EE4003254E7 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 76E4920A291C9EE4003254E7 /* FirebaseStorage */; };
 		76E4920D291C9EE4003254E7 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 76E4920C291C9EE4003254E7 /* FirebaseStorageCombine-Community */; };
 		76E4920F291C9F39003254E7 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E4920E291C9F39003254E7 /* Firebase.swift */; };
+		B6FC04927C884203D851BF8B /* Pods_WheelOfDinnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0068BF894F9BF98C6E2DE6BF /* Pods_WheelOfDinnerTests.framework */; };
+		D9DD844E24D5D61103EBD20E /* Pods_WheelOfDinner_WheelOfDinnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4075D7260302E221A6C3DCF0 /* Pods_WheelOfDinner_WheelOfDinnerUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0068BF894F9BF98C6E2DE6BF /* Pods_WheelOfDinnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WheelOfDinnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4075D7260302E221A6C3DCF0 /* Pods_WheelOfDinner_WheelOfDinnerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WheelOfDinner_WheelOfDinnerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43F077CFEB3047C5CC45D86F /* Pods-WheelOfDinnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelOfDinnerTests.release.xcconfig"; path = "Target Support Files/Pods-WheelOfDinnerTests/Pods-WheelOfDinnerTests.release.xcconfig"; sourceTree = "<group>"; };
 		760513FF293DAD670034807B /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
 		76051401293DBA5F0034807B /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		76051405293DD23F0034807B /* GooglePlacesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesManager.swift; sourceTree = "<group>"; };
@@ -95,6 +100,12 @@
 		76350C12293D7A9200FFF9FD /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		76350C17293D8CCB00FFF9FD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		76E4920E291C9F39003254E7 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
+		792F8F6669413391703DB32C /* Pods_WheelOfDinner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WheelOfDinner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F8E28C6CB247388F3DBC337 /* Pods-WheelOfDinner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelOfDinner.debug.xcconfig"; path = "Target Support Files/Pods-WheelOfDinner/Pods-WheelOfDinner.debug.xcconfig"; sourceTree = "<group>"; };
+		93D444685F559D5A96A12079 /* Pods-WheelOfDinnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelOfDinnerTests.debug.xcconfig"; path = "Target Support Files/Pods-WheelOfDinnerTests/Pods-WheelOfDinnerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9F9720B254D3F62499A0BB99 /* Pods-WheelOfDinner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelOfDinner.release.xcconfig"; path = "Target Support Files/Pods-WheelOfDinner/Pods-WheelOfDinner.release.xcconfig"; sourceTree = "<group>"; };
+		DCFBF12EAF26195A1D07B213 /* Pods-WheelOfDinner-WheelOfDinnerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelOfDinner-WheelOfDinnerUITests.release.xcconfig"; path = "Target Support Files/Pods-WheelOfDinner-WheelOfDinnerUITests/Pods-WheelOfDinner-WheelOfDinnerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E0DB7C6AE6EDC5BE079621AC /* Pods-WheelOfDinner-WheelOfDinnerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelOfDinner-WheelOfDinnerUITests.debug.xcconfig"; path = "Target Support Files/Pods-WheelOfDinner-WheelOfDinnerUITests/Pods-WheelOfDinner-WheelOfDinnerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +125,8 @@
 				76E4920B291C9EE4003254E7 /* FirebaseStorage in Frameworks */,
 				76E491FD291C9EE4003254E7 /* FirebaseAuth in Frameworks */,
 				76E4920D291C9EE4003254E7 /* FirebaseStorageCombine-Community in Frameworks */,
-				76350C0B293D6A3300FFF9FD /* ExtensionKit in Frameworks */,
 				76E491FF291C9EE4003254E7 /* FirebaseAuthCombine-Community in Frameworks */,
+				0254A0985FDBA596F55605EC /* Pods_WheelOfDinner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6FC04927C884203D851BF8B /* Pods_WheelOfDinnerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,12 +142,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9DD844E24D5D61103EBD20E /* Pods_WheelOfDinner_WheelOfDinnerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2AC84C02990308698B120BAA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F8E28C6CB247388F3DBC337 /* Pods-WheelOfDinner.debug.xcconfig */,
+				9F9720B254D3F62499A0BB99 /* Pods-WheelOfDinner.release.xcconfig */,
+				E0DB7C6AE6EDC5BE079621AC /* Pods-WheelOfDinner-WheelOfDinnerUITests.debug.xcconfig */,
+				DCFBF12EAF26195A1D07B213 /* Pods-WheelOfDinner-WheelOfDinnerUITests.release.xcconfig */,
+				93D444685F559D5A96A12079 /* Pods-WheelOfDinnerTests.debug.xcconfig */,
+				43F077CFEB3047C5CC45D86F /* Pods-WheelOfDinnerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		760E46C029134F5F00C2FA15 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +169,8 @@
 				760E46E229134F6000C2FA15 /* WheelOfDinnerTests */,
 				760E46EC29134F6000C2FA15 /* WheelOfDinnerUITests */,
 				760E46CA29134F5F00C2FA15 /* Products */,
+				2AC84C02990308698B120BAA /* Pods */,
+				E43E53673FC2ACC314452EF7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -243,6 +271,16 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		E43E53673FC2ACC314452EF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				792F8F6669413391703DB32C /* Pods_WheelOfDinner.framework */,
+				4075D7260302E221A6C3DCF0 /* Pods_WheelOfDinner_WheelOfDinnerUITests.framework */,
+				0068BF894F9BF98C6E2DE6BF /* Pods_WheelOfDinnerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -250,9 +288,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 760E46F329134F6000C2FA15 /* Build configuration list for PBXNativeTarget "WheelOfDinner" */;
 			buildPhases = (
+				9E3F6C66DEA935D8BABBAD50 /* [CP] Check Pods Manifest.lock */,
 				760E46C529134F5F00C2FA15 /* Sources */,
 				760E46C629134F5F00C2FA15 /* Frameworks */,
 				760E46C729134F5F00C2FA15 /* Resources */,
+				08A90C336A946C5E3B3F9444 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -272,7 +312,6 @@
 				76E49208291C9EE4003254E7 /* FirebaseFirestoreSwift */,
 				76E4920A291C9EE4003254E7 /* FirebaseStorage */,
 				76E4920C291C9EE4003254E7 /* FirebaseStorageCombine-Community */,
-				76350C0A293D6A3300FFF9FD /* ExtensionKit */,
 				76350C15293D7CEE00FFF9FD /* Kingfisher */,
 			);
 			productName = WheelOfDinner;
@@ -283,6 +322,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 760E46F629134F6000C2FA15 /* Build configuration list for PBXNativeTarget "WheelOfDinnerTests" */;
 			buildPhases = (
+				3D29BAFECE7AED51D7F91C02 /* [CP] Check Pods Manifest.lock */,
 				760E46DB29134F6000C2FA15 /* Sources */,
 				760E46DC29134F6000C2FA15 /* Frameworks */,
 				760E46DD29134F6000C2FA15 /* Resources */,
@@ -301,9 +341,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 760E46F929134F6000C2FA15 /* Build configuration list for PBXNativeTarget "WheelOfDinnerUITests" */;
 			buildPhases = (
+				E6E63C8342111A83BA9AE461 /* [CP] Check Pods Manifest.lock */,
 				760E46E529134F6000C2FA15 /* Sources */,
 				760E46E629134F6000C2FA15 /* Frameworks */,
 				760E46E729134F6000C2FA15 /* Resources */,
+				95E865D65D7D6A855580B067 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -350,7 +392,6 @@
 			packageReferences = (
 				761895D22918DCA0000C137E /* XCRemoteSwiftPackageReference "FloatingPanel" */,
 				76E491F7291C9EE4003254E7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				76350C09293D6A3300FFF9FD /* XCRemoteSwiftPackageReference "ExtensionKit" */,
 				76350C14293D7CEE00FFF9FD /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 760E46CA29134F5F00C2FA15 /* Products */;
@@ -391,6 +432,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08A90C336A946C5E3B3F9444 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WheelOfDinner/Pods-WheelOfDinner-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WheelOfDinner/Pods-WheelOfDinner-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WheelOfDinner/Pods-WheelOfDinner-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D29BAFECE7AED51D7F91C02 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WheelOfDinnerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95E865D65D7D6A855580B067 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WheelOfDinner-WheelOfDinnerUITests/Pods-WheelOfDinner-WheelOfDinnerUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WheelOfDinner-WheelOfDinnerUITests/Pods-WheelOfDinner-WheelOfDinnerUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WheelOfDinner-WheelOfDinnerUITests/Pods-WheelOfDinner-WheelOfDinnerUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E3F6C66DEA935D8BABBAD50 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WheelOfDinner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6E63C8342111A83BA9AE461 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WheelOfDinner-WheelOfDinnerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		760E46C529134F5F00C2FA15 /* Sources */ = {
@@ -527,6 +671,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -577,6 +722,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -586,6 +732,7 @@
 		};
 		760E46F429134F6000C2FA15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F8E28C6CB247388F3DBC337 /* Pods-WheelOfDinner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -619,6 +766,7 @@
 		};
 		760E46F529134F6000C2FA15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F9720B254D3F62499A0BB99 /* Pods-WheelOfDinner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -652,6 +800,7 @@
 		};
 		760E46F729134F6000C2FA15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93D444685F559D5A96A12079 /* Pods-WheelOfDinnerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -672,6 +821,7 @@
 		};
 		760E46F829134F6000C2FA15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43F077CFEB3047C5CC45D86F /* Pods-WheelOfDinnerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -692,6 +842,7 @@
 		};
 		760E46FA29134F6000C2FA15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0DB7C6AE6EDC5BE079621AC /* Pods-WheelOfDinner-WheelOfDinnerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -710,6 +861,7 @@
 		};
 		760E46FB29134F6000C2FA15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCFBF12EAF26195A1D07B213 /* Pods-WheelOfDinner-WheelOfDinnerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -776,14 +928,6 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		76350C09293D6A3300FFF9FD /* XCRemoteSwiftPackageReference "ExtensionKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/gtokman/ExtensionKit.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		76350C14293D7CEE00FFF9FD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -807,11 +951,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 761895D22918DCA0000C137E /* XCRemoteSwiftPackageReference "FloatingPanel" */;
 			productName = FloatingPanel;
-		};
-		76350C0A293D6A3300FFF9FD /* ExtensionKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 76350C09293D6A3300FFF9FD /* XCRemoteSwiftPackageReference "ExtensionKit" */;
-			productName = ExtensionKit;
 		};
 		76350C15293D7CEE00FFF9FD /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -16,6 +16,10 @@ struct Constants{
     struct Color{
         static let backgroundColor = "FFF8F0"
     }
+    
+    struct API{
+        static let PLACES_API = "AIzaSyDEvNoLoEdXGXdMAsy_7ZpRpWYaxvgGwQQ"
+    }
 }
 
 extension UIColor {

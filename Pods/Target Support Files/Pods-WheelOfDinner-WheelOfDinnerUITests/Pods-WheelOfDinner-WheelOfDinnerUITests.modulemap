@@ -1,0 +1,6 @@
+framework module Pods_WheelOfDinner_WheelOfDinnerUITests {
+  umbrella header "Pods-WheelOfDinner-WheelOfDinnerUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

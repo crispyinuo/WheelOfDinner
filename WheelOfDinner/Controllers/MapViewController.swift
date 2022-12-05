@@ -66,6 +66,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, FloatingPa
     }
     
     func updateSearchResults(for searchController: UISearchController) {
+        guard let query = searchController.searchBar.text, !query.trimmingCharacters(in: .whitespaces).isEmpty else{
+            return
+        }
         
+        GooglePlacesManager.shared.findPlaces(query: query){result in
+            switch result{
+            case .success(let places):
+                print(places)
+            case .failure (let error):
+                print(error)
+            }
+        }
     }
 }
