@@ -18,6 +18,7 @@ struct Business: Decodable {
     let coordinates: Coordinates?
     let image_url: String?
     let location: Location?
+    let is_closed: Bool?
 
 //    enum CodingKeys: String, CodingKey {
 //        case rating, price, id, categories

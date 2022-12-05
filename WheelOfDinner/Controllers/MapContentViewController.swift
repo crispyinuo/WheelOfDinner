@@ -44,10 +44,42 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
         let result = sharedModel.businesslist[indexPath.row]
         print("I got here in " + sharedModel.businesslist[indexPath.row].name!)
         let cell = tableview.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
+        
+        // restaurant name
         cell.RestaurantNameLabel.text = result.name ?? "No name"
+        
+        // restaurant image
         let url = URL(string: result.image_url ?? "")
         print("Image URL: " + result.image_url!)
         cell.ImageView.kf.setImage(with:url)
+        
+        // restaurant price level
+        cell.PriceLabel.text = result.price ?? ""
+        
+        // restaurant review count
+        cell.ReviewLabel.text = "\( String(result.reviewCount ?? 0)) reviews"
+        
+        // if the restaurant is closed
+        if let closed = result.is_closed{
+            if(closed){
+                cell.isOpenLabel.text = "Closed now"
+            }else{
+                cell.isOpenLabel.text = "Open"
+            }
+        }else{
+            cell.isOpenLabel.text = ""
+        }
+        
+        // restaurant location
+        cell.LocationLabel.text = (result.location?.address1) ?? ""
+        
+        // restaurant category
+        if let category = result.categories{
+            cell.CategoryLabel.text = category[0].title ?? ""
+        }else{
+            cell.CategoryLabel.text = ""
+        }
+        
         return cell
     }
     
