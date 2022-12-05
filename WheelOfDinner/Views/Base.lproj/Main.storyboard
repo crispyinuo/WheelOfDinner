@@ -30,7 +30,9 @@
                                 </constraints>
                                 <color key="tintColor" red="1" green="0.53333333333333333" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Get Started"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Get Started">
+                                    <backgroundConfiguration key="background"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="bBj-jY-VMs" kind="show" id="BFA-3C-5Ou"/>
                                 </connections>
@@ -152,7 +154,7 @@
                                     <constraint firstAttribute="height" constant="44" id="dQW-eT-MyR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrV-tv-SFv">
                                 <rect key="frame" x="59" y="579.66666666666663" width="272" height="34.666666666666629"/>
@@ -517,7 +519,7 @@
                                     <constraint firstAttribute="height" constant="44" id="fW0-C7-WgV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rlc-KO-BlI"/>
@@ -560,7 +562,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7Tz-N8-Vvi"/>
+        <segue reference="BFA-3C-5Ou"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Red Icon" width="341.33334350585938" height="341.33334350585938"/>

@@ -25,6 +25,7 @@
 		76350C032939753B00FFF9FD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76350C022939753B00FFF9FD /* SignUpViewController.swift */; };
 		76350C05293CB27400FFF9FD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76350C04293CB27400FFF9FD /* Constants.swift */; };
 		76350C08293CB31C00FFF9FD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76350C07293CB31C00FFF9FD /* HomeViewController.swift */; };
+		76350C0B293D6A3300FFF9FD /* ExtensionKit in Frameworks */ = {isa = PBXBuildFile; productRef = 76350C0A293D6A3300FFF9FD /* ExtensionKit */; };
 		76E491F9291C9EE4003254E7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 76E491F8291C9EE4003254E7 /* FirebaseAnalytics */; };
 		76E491FB291C9EE4003254E7 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 76E491FA291C9EE4003254E7 /* FirebaseAnalyticsSwift */; };
 		76E491FD291C9EE4003254E7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 76E491FC291C9EE4003254E7 /* FirebaseAuth */; };
@@ -97,6 +98,7 @@
 				76E4920B291C9EE4003254E7 /* FirebaseStorage in Frameworks */,
 				76E491FD291C9EE4003254E7 /* FirebaseAuth in Frameworks */,
 				76E4920D291C9EE4003254E7 /* FirebaseStorageCombine-Community in Frameworks */,
+				76350C0B293D6A3300FFF9FD /* ExtensionKit in Frameworks */,
 				76E491FF291C9EE4003254E7 /* FirebaseAuthCombine-Community in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +249,7 @@
 				76E49208291C9EE4003254E7 /* FirebaseFirestoreSwift */,
 				76E4920A291C9EE4003254E7 /* FirebaseStorage */,
 				76E4920C291C9EE4003254E7 /* FirebaseStorageCombine-Community */,
+				76350C0A293D6A3300FFF9FD /* ExtensionKit */,
 			);
 			productName = WheelOfDinner;
 			productReference = 760E46C929134F5F00C2FA15 /* WheelOfDinner.app */;
@@ -323,6 +326,7 @@
 			packageReferences = (
 				761895D22918DCA0000C137E /* XCRemoteSwiftPackageReference "FloatingPanel" */,
 				76E491F7291C9EE4003254E7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				76350C09293D6A3300FFF9FD /* XCRemoteSwiftPackageReference "ExtensionKit" */,
 			);
 			productRefGroup = 760E46CA29134F5F00C2FA15 /* Products */;
 			projectDirPath = "";
@@ -740,6 +744,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		76350C09293D6A3300FFF9FD /* XCRemoteSwiftPackageReference "ExtensionKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gtokman/ExtensionKit.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		76E491F7291C9EE4003254E7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -755,6 +767,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 761895D22918DCA0000C137E /* XCRemoteSwiftPackageReference "FloatingPanel" */;
 			productName = FloatingPanel;
+		};
+		76350C0A293D6A3300FFF9FD /* ExtensionKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76350C09293D6A3300FFF9FD /* XCRemoteSwiftPackageReference "ExtensionKit" */;
+			productName = ExtensionKit;
 		};
 		76E491F8291C9EE4003254E7 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

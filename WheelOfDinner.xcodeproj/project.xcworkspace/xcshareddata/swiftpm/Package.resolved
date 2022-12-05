@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "extensionkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/gtokman/ExtensionKit.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "24a0f9726c56f8d0a50c41261a4b29e46693bff9"
+      }
+    },
+    {
       "identity" : "firebase-ios-sdk",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk",
