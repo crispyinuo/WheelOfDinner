@@ -87,10 +87,14 @@ class SignUpViewController: UIViewController {
         return nil
     }
     
+    //when any field is empty, add alert message
     func showError(_ message: String){
-        //TODO: add alert message
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true)
     }
     
+    // if signup successful, transition from signUp Page to homepage
     func transitionToHome(){
         let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
         

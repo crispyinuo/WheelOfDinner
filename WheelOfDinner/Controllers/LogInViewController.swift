@@ -75,10 +75,14 @@ class LogInViewController: UIViewController {
         return nil
     }
     
+    //when any field is empty, add alert message
     func showError(_ message: String){
-        //TODO: add alert message
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true)
     }
     
+    // if login successful, transition from login Page to homepage
     func transitionToHome(){
         let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
         

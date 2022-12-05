@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		76051400293DAD670034807B /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760513FF293DAD670034807B /* LikeViewController.swift */; };
 		76051402293DBA5F0034807B /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76051401293DBA5F0034807B /* ResultViewController.swift */; };
+		76051406293DD23F0034807B /* GooglePlacesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76051405293DD23F0034807B /* GooglePlacesManager.swift */; };
 		760E46CD29134F5F00C2FA15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760E46CC29134F5F00C2FA15 /* AppDelegate.swift */; };
 		760E46CF29134F5F00C2FA15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760E46CE29134F5F00C2FA15 /* SceneDelegate.swift */; };
 		760E46D129134F5F00C2FA15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760E46D029134F5F00C2FA15 /* ViewController.swift */; };
@@ -67,6 +68,7 @@
 /* Begin PBXFileReference section */
 		760513FF293DAD670034807B /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
 		76051401293DBA5F0034807B /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		76051405293DD23F0034807B /* GooglePlacesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesManager.swift; sourceTree = "<group>"; };
 		760E46C929134F5F00C2FA15 /* WheelOfDinner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheelOfDinner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		760E46CC29134F5F00C2FA15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		760E46CE29134F5F00C2FA15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			children = (
 				761895CC29189ED2000C137E /* YelpAPI.swift */,
 				76E4920E291C9F39003254E7 /* Firebase.swift */,
+				76051405293DD23F0034807B /* GooglePlacesManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76051406293DD23F0034807B /* GooglePlacesManager.swift in Sources */,
 				76E4920F291C9F39003254E7 /* Firebase.swift in Sources */,
 				761895CD29189ED2000C137E /* YelpAPI.swift in Sources */,
 				761895D12918D8EF000C137E /* MapContentViewController.swift in Sources */,
