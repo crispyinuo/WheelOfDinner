@@ -41,6 +41,10 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.frame = view.bounds
     }
     
+    public func update(with places: [Place]){
+        self.places = places
+        tableView.reloadData()
+    }
 
     /*
     // MARK: - Navigation
