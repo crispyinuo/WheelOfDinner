@@ -10,11 +10,12 @@ import MapKit
 import CoreLocation
 import FloatingPanel
 
-class MapViewController: UIViewController, CLLocationManagerDelegate, FloatingPanelControllerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, FloatingPanelControllerDelegate, UISearchResultsUpdating{
 
     @IBOutlet weak var mapView: MKMapView!
     
     let manager = CLLocationManager()
+    let searchVC = UISearchController(searchResultsController: ResultViewController())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, FloatingPa
         }
         fpc.set(contentViewController: contentVC)
         fpc.addPanel(toParent: self)
+        searchVC.searchBar.backgroundColor = UIColor(hex: Constants.Color.backgroundColor)
+        searchVC.searchResultsUpdater = self
+        navigationItem.searchController = searchVC
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        mapView.frame = CGRect(x: 0, y: view.safeAreaInsets.top, width: view.frame.size.width, height: view.frame.size.height - view.safeAreaInsets.top)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -56,4 +65,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, FloatingPa
         mapView.addAnnotation(pin)
     }
     
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
 }

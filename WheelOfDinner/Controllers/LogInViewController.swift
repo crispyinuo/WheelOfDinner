@@ -10,6 +10,8 @@ import FirebaseAuth
 import Firebase
 
 class LogInViewController: UIViewController {
+    
+    let myUser = User.shared;
 
     @IBOutlet weak var EmailTextField: UITextField!
     
@@ -49,6 +51,8 @@ class LogInViewController: UIViewController {
                 }
                 else{
                     // Transition to the home page
+                    // TODO: Get uid and set User
+                 //   myUser.setUser(uid: <#T##String#>, username: <#T##String#>)
                     self.transitionToHome()
                 }
                 

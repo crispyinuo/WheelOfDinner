@@ -7,28 +7,31 @@
 
 import Foundation
 
-struct User {
-    let uid: String
-    let likeList: [Business]?
-    let username: String
-    let resultList: [Business]?
+class User {
+    public static let shared = User()
     
-//    let rating: Double?
-//    let price: String?
-//    let id: String?
-//    let categories: [Category]?
-//    let reviewCount: Int?
-//    let name: String?
-//    let url: String?
-//    let coordinates: Coordinates?
-//    let image_url: String?
-//    let location: Location?
+    //Default coordinates
+    var latitude: Double = 34.0224
+    var longitude: Double =  118.2851
+    
+    var uid: String = ""
+    //Store a list of id of business
+    var likeList: [String] = []
+    var username: String = ""
+    var resultList: [String] = []
+    
+    func setUser(uid: String, username: String){
+        self.uid = uid
+        self.username = username
+    }
+    
+    func setLocation(latitude: Double, longitude: Double){
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+    
+    func addToLikeList(_ businessId: String){
+        likeList.append(businessId)
+    }
 
-//    enum CodingKeys: String, CodingKey {
-//        case rating, price, id, categories
-//        case reviewCount = "review_count"
-//        case name, url, coordinates
-//        case imageURL = "image_url"
-//        case location
-//    }
 }
