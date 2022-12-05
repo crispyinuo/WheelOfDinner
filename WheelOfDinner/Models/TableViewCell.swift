@@ -23,5 +23,7 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var RatingLabel: UILabel!
     
+    @IBOutlet weak var addButton: UIButton!
+    
     @IBOutlet weak var RestaurantNameLabel: UILabel!
 }

@@ -63,6 +63,7 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.RatingLabel.text = "Rating: \( String(result.rating ?? 0))"
         
         // if the restaurant is closed
+        print("Is Closed? \(result.is_closed!)")
         if let closed = result.is_closed{
             if(closed == true){
                 cell.isOpenLabel.text = "Closed now"
@@ -85,7 +86,32 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
             cell.CategoryLabel.text = ""
         }
         
+        cell.addButton.tag = indexPath.row
+        cell.addButton.addTarget(self, action: #selector(addToLikes), for: .touchUpInside)
+        
         return cell
+    }
+    @objc func addToLikes(sender: UIButton){
+        let indexpath1 = IndexPath(row: sender.tag, section: 0)
+        let selectedRestaurant = sharedModel.businesslist[indexpath1.row]
+        
+        //TODO: add restaurant to userLikes list
+        print(selectedRestaurant.name!)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        performSegue(withIdentifier: "YelpDetail", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "YelpDetail" {
+            let WebDetailVC = segue.destination as! WebViewController
+                // let indexPath = tableView.indexPath.row
+            WebDetailVC.selectedRestaurant = sharedModel.businesslist[(sender as! IndexPath).row].url
+            self.tableview.reloadData()
+        }
+        self.dismiss(animated: true, completion: nil)
+        //
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

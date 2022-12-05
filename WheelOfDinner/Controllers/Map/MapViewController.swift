@@ -16,22 +16,33 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, FloatingPa
     
     let manager = CLLocationManager()
     let searchVC = UISearchController(searchResultsController: ResultViewController())
+    let fpc = FloatingPanelController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //Floating Panel
-        let fpc = FloatingPanelController()
         fpc.delegate = self
         
         guard let contentVC = storyboard?.instantiateViewController(identifier: "fpc_content") as? MapContentViewController else{
             return
         }
         fpc.set(contentViewController: contentVC)
-        fpc.addPanel(toParent: self)
+       // fpc.addPanel(toParent: self)
         searchVC.searchBar.backgroundColor = UIColor(hex: Constants.Color.backgroundColor)
         searchVC.searchResultsUpdater = self
         navigationItem.searchController = searchVC
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fpc.addPanel(toParent: self)
+        self.view.bringSubviewToFront(fpc.view)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        fpc.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -92,7 +103,6 @@ extension MapViewController: ResultViewControllerDelegate{
         
         // Remove all map pins
         mapView.removeAnnotations(mapView.annotations)
-
         
         // Add a map pin
         let pin = MKPointAnnotation()
