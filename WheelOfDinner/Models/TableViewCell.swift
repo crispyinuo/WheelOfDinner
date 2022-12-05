@@ -21,5 +21,7 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var CategoryLabel: UILabel!
     
+    @IBOutlet weak var RatingLabel: UILabel!
+    
     @IBOutlet weak var RestaurantNameLabel: UILabel!
 }

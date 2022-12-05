@@ -57,7 +57,10 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.PriceLabel.text = result.price ?? ""
         
         // restaurant review count
-        cell.ReviewLabel.text = "\( String(result.reviewCount ?? 0)) reviews"
+        cell.ReviewLabel.text = "\( String(result.review_count ?? 0)) reviews"
+        
+        // restaurant rating
+        cell.RatingLabel.text = "Rating: \( String(result.rating ?? 0))"
         
         // if the restaurant is closed
         if let closed = result.is_closed{
@@ -71,7 +74,7 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         
         // restaurant location
-        cell.LocationLabel.text = (result.location?.address1) ?? ""
+        cell.LocationLabel.text = (result.location?.address1) ?? "No detail location"
         
         // restaurant category
         if let category = result.categories{

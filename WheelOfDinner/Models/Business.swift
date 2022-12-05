@@ -12,7 +12,7 @@ struct Business: Decodable {
     let price: String?
     let id: String?
     let categories: [Category]?
-    let reviewCount: Int?
+    let review_count: Int?
     let name: String?
     let url: String?
     let coordinates: Coordinates?
