@@ -6,8 +6,15 @@
 //
 
 import UIKit
+import CoreLocation
+
+protocol ResultViewControllerDelegate: AnyObject {
+    func didTapPlace(with coordinates: CLLocationCoordinate2D)
+}
 
 class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    weak var delegate: ResultViewControllerDelegate?
     
     private let tableView: UITableView = {
         let table = UITableView()
@@ -27,13 +34,32 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.textLabel?.text = places[indexPath.row].name
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // deselect the current row and hide the tableview
+        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.isHidden = true
+        let place = places[indexPath.row]
+        GooglePlacesManager.shared.resolveLocation(for: place){ result in
+            switch result {
+            case .success(let coordinate):
+                DispatchQueue.main.async{
+                    self.delegate?.didTapPlace(with: coordinate)
+                }
+                break
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = .clear
     }
     
     override func viewDidLayoutSubviews() {
@@ -42,6 +68,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     public func update(with places: [Place]){
+        self.tableView.isHidden = false
         self.places = places
         tableView.reloadData()
     }

@@ -71,6 +71,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, FloatingPa
             return
         }
         
+        resultsVC.delegate = self
+        
         GooglePlacesManager.shared.findPlaces(query: query){result in
             switch result{
             case .success(let places):
@@ -82,3 +84,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, FloatingPa
         }
     }
 }
+
+extension MapViewController: ResultViewControllerDelegate{
+    func didTapPlace(with coordinates: CLLocationCoordinate2D){
+        searchVC.searchBar.resignFirstResponder()
+        searchVC.dismiss(animated: true, completion: nil)
+        
+        // Remove all map pins
+        mapView.removeAnnotations(mapView.annotations)
+
+        
+        // Add a map pin
+        let pin = MKPointAnnotation()
+        pin.coordinate = coordinates
+        mapView.addAnnotation(pin)
+        mapView.setRegion(MKCoordinateRegion(center: coordinates, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)), animated: true)
+    }
+}
+

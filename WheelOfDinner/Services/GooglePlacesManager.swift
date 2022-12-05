@@ -27,6 +27,7 @@ final class GooglePlacesManager{
     
     enum PlacesError: Error{
         case failedToFind
+        case failedToGetCoordinates
     }
     
     public func findPlaces(query: String, completion: @escaping (Result<[Place], Error>) ->Void){
@@ -46,6 +47,22 @@ final class GooglePlacesManager{
                 Place(name: $0.attributedFullText.string, identifier: $0.placeID)
             })
             completion(.success(places))
+        }
+    }
+    
+    public func resolveLocation(
+        for place: Place,
+            completion: @escaping (Result<CLLocationCoordinate2D, Error>) -> Void
+    ){
+        client.fetchPlace(fromPlaceID: place.identifier, placeFields: .coordinate, sessionToken: nil){
+            googlePlace, error in
+            guard let googlePlace = googlePlace, error == nil else{
+                completion(.failure(PlacesError.failedToGetCoordinates))
+                return
+            }
+            let coordinate = CLLocationCoordinate2D(latitude: googlePlace.coordinate.latitude, longitude: googlePlace.coordinate.longitude)
+            
+            completion(.success(coordinate))
         }
     }
     
