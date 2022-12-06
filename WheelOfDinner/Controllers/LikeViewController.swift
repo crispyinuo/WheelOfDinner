@@ -59,9 +59,19 @@ class LikeViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            if let bid = sharedModel.likelist[indexPath.row].id{
+                           thisUser.deleteFromLikeList(bid: bid)
+            }
+//            self.tableView.beginUpdates()
+//                DispatchQueue.main.async {
+//                    tableView.deleteRows(at: [indexPath], with: .automatic)
+//                    self.tableView.endUpdates()
+//                }
             // Delete the row from the data source
-            //    model.removeFlashcard(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+//            if let bid = sharedModel.likelist[indexPath.row].id{
+//                thisUser.deleteFromLikeList(bid: bid)
+//            }
+            //tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     

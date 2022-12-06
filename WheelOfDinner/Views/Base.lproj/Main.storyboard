@@ -25,12 +25,13 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8M-4G-Hzz">
                                 <rect key="frame" x="20" y="745" width="350" height="55"/>
+                                <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="odf-at-Stm"/>
                                 </constraints>
                                 <color key="tintColor" red="1" green="0.53333333333333333" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Get Started">
+                                <buttonConfiguration key="configuration" style="tinted" title="Get Started" cornerStyle="medium">
                                     <backgroundConfiguration key="background"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -296,9 +297,9 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYv-jn-JVV">
-                                                    <rect key="frame" x="350" y="5" width="20" height="18.333333333333332"/>
+                                                    <rect key="frame" x="330" y="5" width="40" height="18.333333333333332"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="d2N-FU-erb"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="d2N-FU-erb"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="15"/>
                                                     <color key="textColor" red="1" green="0.43529411759999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -633,9 +634,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I20-N8-2Tk">
-                                            <rect key="frame" x="350" y="5" width="20" height="18.333333333333332"/>
+                                            <rect key="frame" x="330" y="5" width="40" height="18.333333333333332"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="VzY-nj-9Ee"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="VzY-nj-9Ee"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="15"/>
                                             <color key="textColor" red="1" green="0.43529411759999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -740,7 +741,7 @@
                                 </constraints>
                                 <color key="tintColor" red="1" green="0.53333333329999999" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Spin"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Spin!" cornerStyle="large"/>
                                 <connections>
                                     <action selector="startButton:" destination="m1K-qu-eTP" eventType="touchUpInside" id="NB7-53-Q5e"/>
                                 </connections>

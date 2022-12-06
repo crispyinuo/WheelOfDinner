@@ -14,13 +14,16 @@ class ResultModel{
     let BASE_URL =  "https://api.yelp.com"
     public var businesslist:[Business] = []
     public var likelist:[Business] = []
-    // keep track of whether the like list has changed so that we don't need to reload it everytime
+    // keep track of whether the like list/business list has changed so that we don't need to reload it everytime
     public var likeListChanged : Bool = false
+    public var spinnerChanged : Bool = false
+    public var businessListChanged : Bool = false
     init(){
     }
     
     // Get a list of businesses around a location
     func getBusinessWithLocation(location: String, onSuccess: @escaping ([Business]) -> Void) {
+        businessListChanged = true
         if let url = URL(string: "\(BASE_URL)/v3/businesses/search?location=\(location)&sort_by=best_match&limit=\(RESULT_COUNT)"){
             var urlRequest = URLRequest(url:url)
             urlRequest.addValue("Bearer \(ACCESS_KEY)", forHTTPHeaderField: "Authorization")
@@ -62,6 +65,7 @@ class ResultModel{
     
     // Get a list of business by coordinates
     func getBusinessByCoordinates(latitude: Double, longitude: Double, onSuccess: @escaping ([Business]) -> Void) {
+        businessListChanged = true
         if let url = URL(string: "\(BASE_URL)/v3/businesses/search?latitude=\(String(format: "%.3f", latitude))&longitude=\(String(format: "%.3f",longitude))&sort_by=best_match&limit=\(RESULT_COUNT)"){
             var urlRequest = URLRequest(url:url)
             urlRequest.addValue("Bearer \(ACCESS_KEY)", forHTTPHeaderField: "Authorization")

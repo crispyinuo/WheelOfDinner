@@ -83,6 +83,7 @@ class User{
         if !likeList.contains(bid) {
             likeList.append(bid)
             sharedModel.likeListChanged = true
+            sharedModel.spinnerChanged = true
             let docRef = db.collection("users").document(self.uid)
             
             // Update the likeList of the user in Firebase
@@ -102,8 +103,9 @@ class User{
     
     func deleteFromLikeList(bid: String){
         if let idx = likeList.firstIndex(of: bid) {
-            likeList.remove(at: idx)
+            self.likeList.remove(at: idx)
             sharedModel.likeListChanged = true
+            sharedModel.spinnerChanged = true
             let docRef = self.db.collection("users").document(self.uid)
             
             // Update the likeList of the user in Firebase

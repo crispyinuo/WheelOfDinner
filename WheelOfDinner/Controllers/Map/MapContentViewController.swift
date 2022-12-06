@@ -21,6 +21,7 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        sharedModel.businessListChanged = true
         tableview.delegate = self
         tableview.dataSource = self
     }
@@ -32,14 +33,17 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
             LocationLabel.text = thisUser.location
         }
         super.viewWillAppear(animated)
-        loadBusiness()
+        if sharedModel.businessListChanged == true{
+            loadBusiness()
+        }
     }
     
     func loadBusiness(){
         sharedModel.getBusinessByCoordinates(latitude: thisUser.latitude, longitude: thisUser.longitude){businesses in
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [self] in
             //put in async because retriving images takes time, you put the task in a separate thread so you don't freeze the UI
             // you get the businesses of type [Business], and reload data on the table view
+                sharedModel.businessListChanged = false
                 self.tableview.reloadData()
             }
         }

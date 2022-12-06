@@ -12,6 +12,7 @@ import FloatingPanel
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, FloatingPanelControllerDelegate, UISearchResultsUpdating{
 
+    let sharedModel = ResultModel.shared
     @IBOutlet weak var mapView: MKMapView!
     
     let manager = CLLocationManager()
@@ -114,6 +115,8 @@ extension MapViewController: ResultViewControllerDelegate{
         mapView.addAnnotation(pin)
         mapView.setRegion(MKCoordinateRegion(center: coordinates, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)), animated: true)
         
+        // everytime location changed, set businessListChanged to true
+        sharedModel.businessListChanged = true
         // Updating restaurants in UI Floating Panel & User location
         thisUser.setLocation(latitude: coordinates.latitude, longitude: coordinates.longitude)
     }
