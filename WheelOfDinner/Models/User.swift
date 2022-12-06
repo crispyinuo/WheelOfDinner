@@ -15,6 +15,7 @@ class User{
     public static let shared = User()
     
     var isLoggedIn = false
+    var location: String = ""
     //Default coordinates: USC campus
     var latitude: Double = 34.0224
     var longitude: Double =  -118.2851

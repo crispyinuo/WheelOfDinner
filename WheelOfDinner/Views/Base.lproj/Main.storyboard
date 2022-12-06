@@ -320,7 +320,7 @@
                                                     </buttonConfiguration>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mj4-sg-BJm">
-                                                    <rect key="frame" x="197" y="29.333333333333329" width="60" height="15"/>
+                                                    <rect key="frame" x="196.33333333333334" y="29.333333333333329" width="60.000000000000028" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Gbr-0B-mVz"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="oX7-4c-Whc"/>
@@ -382,7 +382,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mjw-1y-3sF">
-                                                    <rect key="frame" x="150" y="29.333333333333329" width="37" height="15"/>
+                                                    <rect key="frame" x="150" y="29.333333333333329" width="36.333333333333343" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="dlh-nM-adl"/>
                                                     </constraints>
@@ -441,14 +441,22 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbD-qv-cSf">
-                                <rect key="frame" x="20" y="47" width="350" height="50"/>
+                                <rect key="frame" x="55" y="47" width="280" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="UF0-tg-fcw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nB7-e5-sxl">
+                                <rect key="frame" x="20" y="59.666666666666657" width="25" height="25"/>
+                                <color key="tintColor" red="0.84705882349999995" green="0.34901960780000002" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="Z1Y-9L-83B"/>
+                                    <constraint firstAttribute="height" constant="25" id="pf7-UC-Whs"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Gb-Uy-tma"/>
                         <color key="backgroundColor" red="1" green="0.97254901960784312" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -456,13 +464,16 @@
                             <constraint firstItem="8Gb-Uy-tma" firstAttribute="trailing" secondItem="gwY-5H-l4t" secondAttribute="trailing" id="0PC-ao-FOe"/>
                             <constraint firstItem="8Gb-Uy-tma" firstAttribute="bottom" secondItem="gwY-5H-l4t" secondAttribute="bottom" id="6U4-SG-Jei"/>
                             <constraint firstItem="gwY-5H-l4t" firstAttribute="leading" secondItem="8Gb-Uy-tma" secondAttribute="leading" id="BdZ-u9-KwU"/>
+                            <constraint firstItem="nB7-e5-sxl" firstAttribute="leading" secondItem="8Gb-Uy-tma" secondAttribute="leading" constant="20" id="GB7-bI-smO"/>
                             <constraint firstItem="bbD-qv-cSf" firstAttribute="top" secondItem="8Gb-Uy-tma" secondAttribute="top" id="PAS-rk-zWa"/>
-                            <constraint firstItem="bbD-qv-cSf" firstAttribute="leading" secondItem="8Gb-Uy-tma" secondAttribute="leading" constant="20" id="dBu-iN-557"/>
+                            <constraint firstItem="bbD-qv-cSf" firstAttribute="leading" secondItem="nB7-e5-sxl" secondAttribute="trailing" constant="10" id="dBu-iN-557"/>
+                            <constraint firstItem="nB7-e5-sxl" firstAttribute="centerY" secondItem="bbD-qv-cSf" secondAttribute="centerY" id="eFS-CL-9Te"/>
                             <constraint firstItem="bbD-qv-cSf" firstAttribute="centerX" secondItem="Mrl-U6-6YO" secondAttribute="centerX" id="etz-Yh-D6P"/>
                             <constraint firstItem="gwY-5H-l4t" firstAttribute="top" secondItem="bbD-qv-cSf" secondAttribute="bottom" id="ig9-4Y-qN5"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="LocationLabel" destination="bbD-qv-cSf" id="LU3-Un-xfR"/>
                         <outlet property="tableview" destination="gwY-5H-l4t" id="0Dv-Ie-L2D"/>
                         <segue destination="gjX-w8-cLB" kind="show" identifier="YelpDetail" id="B9n-EC-AR6"/>
                     </connections>
@@ -945,6 +956,7 @@
         <image name="ice_cream" width="170.66667175292969" height="170.66667175292969"/>
         <image name="location.circle.fill" catalog="system" width="128" height="123"/>
         <image name="map" catalog="system" width="128" height="112"/>
+        <image name="mappin.and.ellipse" catalog="system" width="117" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemGreenColor">

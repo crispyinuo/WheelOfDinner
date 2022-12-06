@@ -16,6 +16,8 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     weak var delegate: ResultViewControllerDelegate?
     
+    let thisUser = User.shared
+    
     private let tableView: UITableView = {
         let table = UITableView()
         table.register(UITableViewCell.self, forCellReuseIdentifier: "mapResultCell")
@@ -40,7 +42,9 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // deselect the current row and hide the tableview
         tableView.deselectRow(at: indexPath, animated: true)
         tableView.isHidden = true
+        // set the location name
         let place = places[indexPath.row]
+        thisUser.location = place.name
         GooglePlacesManager.shared.resolveLocation(for: place){ result in
             switch result {
             case .success(let coordinate):

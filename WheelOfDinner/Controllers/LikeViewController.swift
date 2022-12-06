@@ -32,7 +32,7 @@ class LikeViewController: UITableViewController {
             self.loadList.enter()
             sharedModel.getBusinessById(BusinessId: bid){business in
             DispatchQueue.main.async {
-               // loading business one by one
+               // self.tableView.reloadData()
             }
             self.loadList.leave()
             }
@@ -42,6 +42,7 @@ class LikeViewController: UITableViewController {
                 self.tableView.reloadData()
                 print("Finished all requests.")
             })
+
     }
     
     

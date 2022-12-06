@@ -11,15 +11,14 @@ class ResultModel{
     public static let shared = ResultModel()
     let RESULT_COUNT = 20
     let ACCESS_KEY = "K_zbPOb9xIg8fO4E2JW3krUcgHb0tsdcZwF978bAspNhLZPy0scTjSxww1seM85pHg4jPkSQqgFV6WWYJr7NUlA4pz_dlV7kLbbsFdfHiK6M7fmVenygD9QwBGdoY3Yx"
-    var location = "NYC"
     let BASE_URL =  "https://api.yelp.com"
     public var businesslist:[Business] = []
     public var likelist:[Business] = []
     init(){
-}
+    }
     
-    func getBusiness(onSuccess: @escaping ([Business]) -> Void) {
-//        if let url = URL(string: "\(BASE_URL)/v3/businesses/search?location=\(location)&sort_by=best_match&limit=\(RESULT_COUNT)"){
+    // Get a list of businesses around a location
+    func getBusinessWithLocation(location: String, onSuccess: @escaping ([Business]) -> Void) {
         if let url = URL(string: "\(BASE_URL)/v3/businesses/search?location=\(location)&sort_by=best_match&limit=\(RESULT_COUNT)"){
             var urlRequest = URLRequest(url:url)
             urlRequest.addValue("Bearer \(ACCESS_KEY)", forHTTPHeaderField: "Authorization")
@@ -39,6 +38,7 @@ class ResultModel{
         }
     }
     
+    // Get a single business by id
     func getBusinessById(BusinessId: String, onSuccess: @escaping (Business) -> Void){
         if let url = URL(string: "\(BASE_URL)/v3/businesses/\(BusinessId)"){
             var urlRequest = URLRequest(url:url)
@@ -58,6 +58,7 @@ class ResultModel{
         }
     }
     
+    // Get a list of business by coordinates
     func getBusinessByCoordinates(latitude: Double, longitude: Double, onSuccess: @escaping ([Business]) -> Void) {
         if let url = URL(string: "\(BASE_URL)/v3/businesses/search?latitude=\(String(format: "%.3f", latitude))&longitude=\(String(format: "%.3f",longitude))&sort_by=best_match&limit=\(RESULT_COUNT)"){
             var urlRequest = URLRequest(url:url)
@@ -84,9 +85,5 @@ class ResultModel{
     
     func getBusinessCount() -> Int{
         return businesslist.count
-    }
-    
-    func setLocation(_ location: String ) -> Void{
-        self.location = location
     }
 }

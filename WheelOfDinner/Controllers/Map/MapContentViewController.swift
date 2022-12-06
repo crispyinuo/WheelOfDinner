@@ -13,6 +13,8 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var tableview: UITableView!
     
+    @IBOutlet weak var LocationLabel: UILabel!
+    
     // Swift Singleton pattern
     let sharedModel = ResultModel.shared
     let thisUser = User.shared
@@ -24,6 +26,11 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        if(thisUser.location.isEmpty){
+            LocationLabel.text = "My Location"
+        }else{
+            LocationLabel.text = thisUser.location
+        }
         super.viewWillAppear(animated)
         loadBusiness()
     }
