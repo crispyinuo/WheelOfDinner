@@ -60,22 +60,22 @@ class ResultModel{
         }
     }
     
-//    func getBusinessesByIds(BusinessIdList: [String], completion: @escaping ([Business]) -> Void){
-//        //likelist = []
-//        print("im here getting bussinesses by ids")
-//        for uid in BusinessIdList {
-//            self.getBusinessById(BusinessId: uid){ business in
-//                    print("adding business \(business.name!)")
-//            }
+    func getBusinessesByIds(BusinessIdList: [String], completion: @escaping ([Business]) -> Void){
+        //likelist = []
+        print("im here getting bussinesses by ids")
+        for uid in BusinessIdList {
+            self.getBusinessById(BusinessId: uid){ business in
+                    print("adding business \(business.name!)")
+            }
+        }
+        completion(self.likelist)
+//        print("templistcount: \(templikelist.count) Idcount: \(BusinessIdList.count)")
+//        if(BusinessIdList.count == templikelist.count){
+//            likelist = templikelist
+//            onSuccess(likelist)
 //        }
-//        completion(self.likelist)
-////        print("templistcount: \(templikelist.count) Idcount: \(BusinessIdList.count)")
-////        if(BusinessIdList.count == templikelist.count){
-////            likelist = templikelist
-////            onSuccess(likelist)
-////        }
-//        //onSuccess(likelist)
-//    }
+        //onSuccess(likelist)
+    }
     
     func getBusinessByCoordinates(latitude: Double, longitude: Double, onSuccess: @escaping ([Business]) -> Void) {
         if let url = URL(string: "\(BASE_URL)/v3/businesses/search?latitude=\(String(format: "%.3f", latitude))&longitude=\(String(format: "%.3f",longitude))&sort_by=best_match&limit=\(RESULT_COUNT)"){

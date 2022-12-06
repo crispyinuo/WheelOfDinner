@@ -26,15 +26,14 @@ class LikeViewController: UITableViewController {
     }
     
     func loadLikeList(){
-        sharedModel.likelist = sharedModel.businesslist
-      //  self.tableView.reloadData()
-//        print("start loading likelist")
-//        sharedModel.getBusinessesByIds(BusinessIdList: User.shared.likeList){businesses in
-//            DispatchQueue.main.async {
-//                print("finish loading likelist \(self.sharedModel.likelist.count)")
-//                self.tableView.reloadData()
-//            }
-//        }
+     //   sharedModel.likelist = sharedModel.businesslist
+        print("start loading likelist")
+        sharedModel.getBusinessesByIds(BusinessIdList: User.shared.likeList){businesses in
+            DispatchQueue.main.async {
+                print("finish loading likelist \(self.sharedModel.likelist.count)")
+                self.tableView.reloadData()
+            }
+        }
     }
     
     
