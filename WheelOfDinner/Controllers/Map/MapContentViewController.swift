@@ -24,6 +24,8 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
         sharedModel.businessListChanged = true
         tableview.delegate = self
         tableview.dataSource = self
+        // To listen from the mapViewController if it updates the location
+        NotificationCenter.default.addObserver(self, selector: #selector(loadListfromMap), name: NSNotification.Name(rawValue: "load"), object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -47,6 +49,16 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
                 self.tableview.reloadData()
             }
         }
+    }
+    
+    @objc func loadListfromMap(notification: NSNotification){
+        //load data here when the mapView update its location
+        if(thisUser.location.isEmpty){
+            LocationLabel.text = "My Location"
+        }else{
+            LocationLabel.text = thisUser.location
+        }
+        loadBusiness()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
