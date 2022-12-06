@@ -51,6 +51,7 @@ class SignUpViewController: UIViewController {
                     // Create the user
 //                    let db = Firestore.firestore()
                     User.shared.initializeUser(username: username, uid: result!.user.uid)
+                    User.shared.FetchData(uid: result!.user.uid)
 //                    db.collection("users").document(result!.user.uid).setData(["username":username, "uid": result!.user.uid]){ error in
 //                        self.showError("Error saving user data.")
 //                    }
@@ -65,15 +66,6 @@ class SignUpViewController: UIViewController {
      @IBAction func LogInRedirectionDidTapped(_ sender: UIButton) {
      }
     
-    /*
-     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
   
     // if the fields are not correct, return error message
     func validateFields() -> String?{

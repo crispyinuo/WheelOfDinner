@@ -76,4 +76,45 @@ class User{
             print("Unvalid location")
         }
     }
+    
+    func addToLikeList(bid: String){
+        if !likeList.contains(bid) {
+            likeList.append(bid)
+            let docRef = db.collection("users").document(self.uid)
+            
+            // Update the likeList of the user in Firebase
+            docRef.updateData([
+                "likeList": self.likeList
+            ]) { err in
+                if let err = err {
+                    print("Error adding likeList for user: \(err)")
+                } else {
+                    print("LikeList successfully updated")
+                }
+            }
+        } else {
+            print("Restaurant already exists")
+        }
+    }
+    
+    func deleteFromLikeList(bid: String){
+        if let idx = likeList.index(of: bid) {
+            likeList.remove(at: idx)
+            let docRef = self.db.collection("users").document(self.uid)
+            
+            // Update the likeList of the user in Firebase
+            docRef.updateData([
+                "likeList": self.likeList
+            ]) { err in
+                if let err = err {
+                    print("Error deleting likeList for user: \(err)")
+                } else {
+                    print("LikeList successfully updated")
+                }
+            }
+        }else{
+            print("Restaurant does not exists")
+        }
+    }
+    
 }

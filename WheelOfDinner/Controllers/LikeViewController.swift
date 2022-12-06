@@ -6,96 +6,103 @@
 //
 
 import UIKit
+import SwiftUI
+import Kingfisher
 
 class LikeViewController: UITableViewController {
     
+    // Swift Singleton pattern
+    let sharedModel = ResultModel.shared
+    let thisUser = User.shared
     
-    //let myuser = UserModel.shared.thisUser
-
     override func viewDidLoad() {
+
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadLikeList()
     }
-
+    
+    func loadLikeList(){
+        sharedModel.likelist = sharedModel.businesslist
+      //  self.tableView.reloadData()
+//        print("start loading likelist")
+//        sharedModel.getBusinessesByIds(BusinessIdList: User.shared.likeList){businesses in
+//            DispatchQueue.main.async {
+//                print("finish loading likelist \(self.sharedModel.likelist.count)")
+//                self.tableView.reloadData()
+//            }
+//        }
+    }
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return sharedModel.likelist.count
     }
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-        //    model.removeFlashcard(at: indexPath.row)
+            //    model.removeFlashcard(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        // the ID of business
+//        let resultId = thisUser.likeList[indexPath.row]
+        let result = sharedModel.likelist[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "likecell", for: indexPath) as! LikeTableViewCell
 
-        // Configure the cell...
-
-        return cell
+            // restaurant name
+            cell.RestaurantNameLabel.text = result.name ?? "No name"
+            
+            // restaurant image
+            let url = URL(string: result.image_url ?? "")
+            
+            cell.ImageView.kf.setImage(with:url)
+            
+            // restaurant price level
+            cell.PriceLabel.text = result.price ?? ""
+            
+            // restaurant review count
+            cell.ReviewLabel.text = "\( String(result.review_count ?? 0)) reviews"
+            
+            // restaurant rating
+            cell.RatingLabel.text = "Rating: \( String(result.rating ?? 0))"
+            
+            // if the restaurant is closed
+            if let closed = result.is_closed{
+                if(closed == true){
+                    cell.isOpenLabel.text = "Closed now"
+                    cell.isOpenLabel.textColor = UIColor.red
+                }else{
+                    cell.isOpenLabel.text = "Open"
+                    cell.isOpenLabel.textColor = UIColor.systemGreen
+                }
+            }else{
+                cell.isOpenLabel.text = ""
+            }
+            
+            // restaurant location
+            cell.LocationLabel.text = (result.location?.address1) ?? "No detail location"
+            
+            // restaurant category
+            if let category = result.categories{
+                cell.CategoryLabel.text = category[0].title ?? ""
+            }else{
+                cell.CategoryLabel.text = ""
+            }
+            
+            return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+        
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+           return CGFloat(100)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+        
 }

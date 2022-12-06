@@ -19,7 +19,6 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        loadBusiness()
         tableview.delegate = self
         tableview.dataSource = self
     }
@@ -30,7 +29,6 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func loadBusiness(){
-        print ("loading user: \(self.latitude),  \(self.longitude)")
         sharedModel.getBusinessByCoordinates(latitude: thisUser.latitude, longitude: thisUser.longitude){businesses in
             DispatchQueue.main.async {
             //put in async because retriving images takes time, you put the task in a separate thread so you don't freeze the UI
@@ -98,7 +96,10 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
         let selectedRestaurant = sharedModel.businesslist[indexpath1.row]
         
         //TODO: add restaurant to userLikes list
-        print(selectedRestaurant.name!)
+        if let id = selectedRestaurant.id{
+            thisUser.addToLikeList(bid: id)
+            print(selectedRestaurant.name!)
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
