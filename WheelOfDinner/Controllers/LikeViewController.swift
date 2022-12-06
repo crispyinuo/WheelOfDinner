@@ -14,6 +14,7 @@ class LikeViewController: UITableViewController {
     // Swift Singleton pattern
     let sharedModel = ResultModel.shared
     let thisUser = User.shared
+    let loadList = DispatchGroup()
     
     override func viewDidLoad() {
 
@@ -26,14 +27,21 @@ class LikeViewController: UITableViewController {
     }
     
     func loadLikeList(){
-     //   sharedModel.likelist = sharedModel.businesslist
-        print("start loading likelist")
-        sharedModel.getBusinessesByIds(BusinessIdList: User.shared.likeList){businesses in
+        sharedModel.likelist = []
+        for bid in User.shared.likeList {
+            self.loadList.enter()
+            sharedModel.getBusinessById(BusinessId: bid){business in
             DispatchQueue.main.async {
-                print("finish loading likelist \(self.sharedModel.likelist.count)")
-                self.tableView.reloadData()
+               // loading business one by one
+            }
+            self.loadList.leave()
             }
         }
+
+        self.loadList.notify(queue: DispatchQueue.main, execute: {
+                self.tableView.reloadData()
+                print("Finished all requests.")
+            })
     }
     
     

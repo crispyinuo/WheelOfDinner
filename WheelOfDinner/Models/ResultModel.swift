@@ -26,9 +26,8 @@ class ResultModel{
             URLSession.shared.dataTask(with:urlRequest){ [self]
                 data, response, error in
                 if let data = data{
-                    // Data that contains our image JSON
+                    // Data that contains our business array
                     do {
-                       // let decoder = JSONDecoder()
                         let result = try JSONDecoder().decode(SearchResult.self, from: data)
                         self.businesslist = result.businesses
                         onSuccess(self.businesslist)
@@ -46,9 +45,8 @@ class ResultModel{
             urlRequest.addValue("Bearer \(ACCESS_KEY)", forHTTPHeaderField: "Authorization")
             URLSession.shared.dataTask(with:urlRequest){ data, response, error in
                 if let data = data{
-                    // Data that contains our image JSON
+                    // Data that contains our business
                     do {
-                       // let decoder = JSONDecoder()
                         let singleResult = try JSONDecoder().decode(Business.self, from: data)
                         self.likelist.append(singleResult)
                         onSuccess(singleResult)
@@ -60,23 +58,6 @@ class ResultModel{
         }
     }
     
-    func getBusinessesByIds(BusinessIdList: [String], completion: @escaping ([Business]) -> Void){
-        //likelist = []
-        print("im here getting bussinesses by ids")
-        for uid in BusinessIdList {
-            self.getBusinessById(BusinessId: uid){ business in
-                    print("adding business \(business.name!)")
-            }
-        }
-        completion(self.likelist)
-//        print("templistcount: \(templikelist.count) Idcount: \(BusinessIdList.count)")
-//        if(BusinessIdList.count == templikelist.count){
-//            likelist = templikelist
-//            onSuccess(likelist)
-//        }
-        //onSuccess(likelist)
-    }
-    
     func getBusinessByCoordinates(latitude: Double, longitude: Double, onSuccess: @escaping ([Business]) -> Void) {
         if let url = URL(string: "\(BASE_URL)/v3/businesses/search?latitude=\(String(format: "%.3f", latitude))&longitude=\(String(format: "%.3f",longitude))&sort_by=best_match&limit=\(RESULT_COUNT)"){
             var urlRequest = URLRequest(url:url)
@@ -84,9 +65,8 @@ class ResultModel{
             URLSession.shared.dataTask(with:urlRequest){ [self]
                 data, response, error in
                 if let data = data{
-                    // Data that contains our image JSON
+                    // Data that contains our business array
                     do {
-                       // let decoder = JSONDecoder()
                         let result = try JSONDecoder().decode(SearchResult.self, from: data)
                         self.businesslist = result.businesses
                         onSuccess(self.businesslist)
