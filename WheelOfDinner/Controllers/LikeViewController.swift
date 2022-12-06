@@ -8,6 +8,9 @@
 import UIKit
 
 class LikeViewController: UITableViewController {
+    
+    
+    let myuser = UserModel.shared.thisUser
 
     override func viewDidLoad() {
         super.viewDidLoad()

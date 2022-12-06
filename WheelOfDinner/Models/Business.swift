@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Business: Decodable {
+struct Business: Codable {
     let rating: Double?
     let price: String?
     let id: String?
@@ -30,17 +30,17 @@ struct Business: Decodable {
 }
 
 // MARK: - Category
-struct Category: Decodable {
+struct Category: Codable {
     let alias, title: String?
 }
 
 // MARK: - Coordinates
-struct Coordinates: Decodable {
+struct Coordinates: Codable {
     let latitude, longitude: Double?
 }
 
 // MARK: - Location
-struct Location: Decodable {
+struct Location: Codable {
     let city, country, address2, address3: String?
     let state, address1, zipCode: String?
 

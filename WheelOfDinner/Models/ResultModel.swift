@@ -62,6 +62,27 @@ class ResultModel{
         }
     }
     
+    func getBusinessByCoordinates(latitude: Double, longitude: Double, onSuccess: @escaping ([Business]) -> Void) {
+        if let url = URL(string: "\(BASE_URL)/v3/businesses/search?latitude=\(String(format: "%.3f", latitude))&longitude=\(String(format: "%.3f",longitude))&sort_by=best_match&limit=\(RESULT_COUNT)"){
+            var urlRequest = URLRequest(url:url)
+            urlRequest.addValue("Bearer \(ACCESS_KEY)", forHTTPHeaderField: "Authorization")
+            URLSession.shared.dataTask(with:urlRequest){ [self]
+                data, response, error in
+                if let data = data{
+                    // Data that contains our image JSON
+                    do {
+                       // let decoder = JSONDecoder()
+                        let result = try JSONDecoder().decode(SearchResult.self, from: data)
+                        self.businesslist = result.businesses
+                        onSuccess(self.businesslist)
+                    } catch {
+                        print(error)
+                    }
+                }
+            }.resume()
+        }
+    }
+    
     struct SearchResult : Decodable{
         let businesses : [Business]
     }

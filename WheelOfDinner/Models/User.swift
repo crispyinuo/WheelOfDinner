@@ -7,12 +7,11 @@
 
 import Foundation
 
-class User {
-    public static let shared = User()
+class User: Codable, Identifiable{
     
-    //Default coordinates
+    //Default coordinates: USC campus
     var latitude: Double = 34.0224
-    var longitude: Double =  118.2851
+    var longitude: Double =  -118.2851
     
     var uid: String = ""
     //Store a list of id of business
@@ -20,18 +19,8 @@ class User {
     var username: String = ""
     var resultList: [String] = []
     
-    func setUser(uid: String, username: String){
-        self.uid = uid
+   init(username: String, uid: String){
         self.username = username
-    }
-    
-    func setLocation(latitude: Double, longitude: Double){
-        self.latitude = latitude
-        self.longitude = longitude
-    }
-    
-    func addToLikeList(_ businessId: String){
-        likeList.append(businessId)
-    }
-
+        self.uid = uid
+   }
 }

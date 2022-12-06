@@ -16,24 +16,29 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
     // Swift Singleton pattern
     let sharedModel = ResultModel.shared
     
+    var latitude: Double = 34
+    var longitude: Double = -118
     override func viewDidLoad(){
+        loadUser()
         loadBusiness()
         super.viewDidLoad()
         tableview.delegate = self
         tableview.dataSource = self
     }
     
+    func loadUser(){
+        // TODO: getUser and update user position
+    }
+    
     func loadBusiness(){
-        print("I got here. loading business")
-        sharedModel.getBusiness{businesses in
+       // print("I got here. loading business")
+        sharedModel.getBusinessByCoordinates(latitude: latitude, longitude: longitude){businesses in
             DispatchQueue.main.async {
             //put in async because retriving images takes time, you put the task in a separate thread so you don't freeze the UI
-            // you get the businesses of type [Business], sort them by reviewCount, and reload data on the table view
-              //  ResultModel.shared.businesslist = businesses.sorted(by: { $0.reviewCount! > $1.reviewCount! })
+            // you get the businesses of type [Business], and reload data on the table view
                 self.tableview.reloadData()
             }
         }
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

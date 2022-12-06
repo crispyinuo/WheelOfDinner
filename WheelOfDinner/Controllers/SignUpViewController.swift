@@ -8,6 +8,8 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class SignUpViewController: UIViewController {
 
@@ -50,15 +52,16 @@ class SignUpViewController: UIViewController {
                 else{
                     // Create the user
                     let db = Firestore.firestore()
-                    db.collection("users").addDocument(data: ["username":username, "uid":result!.user.uid]){(error) in
-                        if error != nil{
+                    UserModel.shared.thisUser = User(username: username, uid: result!.user.uid)
+                    do {
+                        try db.collection("users").document(result!.user.uid).setData(from: UserModel.shared.thisUser!)
+                    }
+                    catch {
                             self.showError("Error saving user data.")
-                        }
                     }
                     // Transition to the home page
                     self.transitionToHome()
                 }
-                
             }
             
         }
@@ -83,7 +86,7 @@ class SignUpViewController: UIViewController {
         if UsernameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || EmailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || PasswordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
             return "Please fill in all fields."
         }
-        //TODO: check email format
+        // TODO: check email format
         return nil
     }
     
