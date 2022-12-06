@@ -52,9 +52,6 @@ class LogInViewController: UIViewController {
                 else{
                     // Get uid and set User
                     User.shared.FetchData(uid: result!.user.uid)
-                    print("I got here")
-              //      Database.database().reference().child("users").updateChildValues()
-                    // Transition to the home page
                     self.transitionToHome()
                 }
                 

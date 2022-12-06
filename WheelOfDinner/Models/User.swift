@@ -33,7 +33,7 @@ class User{
    }
     
     func FetchData(uid: String){
-        print("I got here in user")
+        self.uid = uid
         let docRef = db.collection("users").document(uid)
 
         docRef.getDocument { (document, error) in
@@ -50,6 +50,30 @@ class User{
             } else {
                 print("User does not exist")
             }
+        }
+    }
+    
+    func setLocation(latitude: Double, longitude: Double){
+        if latitude >= -90 && latitude <= 90 && longitude <= 180 && longitude >= -180 && (latitude != self.latitude || longitude != self.longitude) {
+            self.latitude = latitude
+            self.longitude = longitude
+            print("latitude: \(String(self.latitude)) longtitude: \(String(self.longitude))")
+//            print("self.uid: \(self.uid)")
+            let docRef = db.collection("users").document(self.uid)
+
+            // Update the latitude and longitude of the user in Firebase
+            docRef.updateData([
+                "latitude": latitude,
+                "longitude": longitude
+            ]) { err in
+                if let err = err {
+                    print("Error updating location for user: \(err)")
+                } else {
+                    print("Location successfully updated")
+                }
+            }
+        }else{
+            print("Unvalid location")
         }
     }
 }

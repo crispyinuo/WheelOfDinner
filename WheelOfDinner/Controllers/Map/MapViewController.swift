@@ -17,6 +17,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, FloatingPa
     let manager = CLLocationManager()
     let searchVC = UISearchController(searchResultsController: ResultViewController())
     let fpc = FloatingPanelController()
+    let thisUser = User.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, FloatingPa
         searchVC.searchBar.backgroundColor = UIColor(hex: Constants.Color.backgroundColor)
         searchVC.searchResultsUpdater = self
         navigationItem.searchController = searchVC
+        manager.startUpdatingLocation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +57,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, FloatingPa
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.delegate = self
         manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
+    //    manager.startUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations:[CLLocation]){
@@ -66,7 +68,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, FloatingPa
     }
     
     func render(_ location: CLLocation){
-        let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+//      set current location to user
+        thisUser.setLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let coordinate = CLLocationCoordinate2D(latitude: thisUser.latitude, longitude: thisUser.longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         let region = MKCoordinateRegion(center: coordinate, span: span)
         mapView.setRegion(region, animated: true)
@@ -109,6 +113,9 @@ extension MapViewController: ResultViewControllerDelegate{
         pin.coordinate = coordinates
         mapView.addAnnotation(pin)
         mapView.setRegion(MKCoordinateRegion(center: coordinates, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)), animated: true)
+        
+        // Updating restaurants in UI Floating Panel & User location
+        thisUser.setLocation(latitude: coordinates.latitude, longitude: coordinates.longitude)
     }
 }
 
