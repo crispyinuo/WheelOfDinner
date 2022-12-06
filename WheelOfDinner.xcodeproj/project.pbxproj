@@ -24,7 +24,6 @@
 		761895CF2918A415000C137E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761895CE2918A415000C137E /* MapViewController.swift */; };
 		761895D12918D8EF000C137E /* MapContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761895D02918D8EF000C137E /* MapContentViewController.swift */; };
 		761895D42918DCA0000C137E /* FloatingPanel in Frameworks */ = {isa = PBXBuildFile; productRef = 761895D32918DCA0000C137E /* FloatingPanel */; };
-		762D8FC5293ED66900500F19 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D8FC4293ED66900500F19 /* UserModel.swift */; };
 		76350BFF2939711400FFF9FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76350BFE2939711400FFF9FD /* GoogleService-Info.plist */; };
 		76350C012939752A00FFF9FD /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76350C002939752A00FFF9FD /* LogInViewController.swift */; };
 		76350C032939753B00FFF9FD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76350C022939753B00FFF9FD /* SignUpViewController.swift */; };
@@ -92,7 +91,6 @@
 		761895CC29189ED2000C137E /* YelpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPI.swift; sourceTree = "<group>"; };
 		761895CE2918A415000C137E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		761895D02918D8EF000C137E /* MapContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContentViewController.swift; sourceTree = "<group>"; };
-		762D8FC4293ED66900500F19 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		76350BFE2939711400FFF9FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		76350C002939752A00FFF9FD /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		76350C022939753B00FFF9FD /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -228,7 +226,6 @@
 				76350C10293D7A4600FFF9FD /* ResultModel.swift */,
 				76350C12293D7A9200FFF9FD /* Business.swift */,
 				76350C17293D8CCB00FFF9FD /* User.swift */,
-				762D8FC4293ED66900500F19 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -573,7 +570,6 @@
 				76350C0D293D71B100FFF9FD /* TableViewCell.swift in Sources */,
 				761895CF2918A415000C137E /* MapViewController.swift in Sources */,
 				76350C11293D7A4600FFF9FD /* ResultModel.swift in Sources */,
-				762D8FC5293ED66900500F19 /* UserModel.swift in Sources */,
 				760E46CF29134F5F00C2FA15 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

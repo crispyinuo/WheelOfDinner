@@ -8,8 +8,6 @@
 import UIKit
 import FirebaseAuth
 import Firebase
-import FirebaseFirestore
-import FirebaseFirestoreSwift
 
 class SignUpViewController: UIViewController {
 
@@ -51,11 +49,11 @@ class SignUpViewController: UIViewController {
                 }
                 else{
                     // Create the user
-                     let db = Firestore.firestore()
-//                    UserModel.shared.thisUser = User(username: username, uid: result!.user.uid)
-                    db.collection("users").document(result!.user.uid).setData(["username":username, "uid": result!.user.uid]){ error in
-                        self.showError("Error saving user data.")
-                    }
+//                    let db = Firestore.firestore()
+                    User.shared.initializeUser(username: username, uid: result!.user.uid)
+//                    db.collection("users").document(result!.user.uid).setData(["username":username, "uid": result!.user.uid]){ error in
+//                        self.showError("Error saving user data.")
+//                    }
                     // Transition to the home page
                     self.transitionToHome()
                 }

@@ -31,7 +31,6 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func loadBusiness(){
-       // print("I got here. loading business")
         sharedModel.getBusinessByCoordinates(latitude: latitude, longitude: longitude){businesses in
             DispatchQueue.main.async {
             //put in async because retriving images takes time, you put the task in a separate thread so you don't freeze the UI
@@ -47,7 +46,6 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let result = sharedModel.businesslist[indexPath.row]
-        print("I got here in " + sharedModel.businesslist[indexPath.row].name!)
         let cell = tableview.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
         
         // restaurant name
@@ -55,7 +53,7 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
         
         // restaurant image
         let url = URL(string: result.image_url ?? "")
-        print("Image URL: " + result.image_url!)
+
         cell.ImageView.kf.setImage(with:url)
         
         // restaurant price level
@@ -68,7 +66,6 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.RatingLabel.text = "Rating: \( String(result.rating ?? 0))"
         
         // if the restaurant is closed
-        print("Is Closed? \(result.is_closed!)")
         if let closed = result.is_closed{
             if(closed == true){
                 cell.isOpenLabel.text = "Closed now"
