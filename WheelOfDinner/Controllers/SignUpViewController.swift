@@ -73,8 +73,19 @@ class SignUpViewController: UIViewController {
         if UsernameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || EmailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || PasswordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
             return "Please fill in all fields."
         }
-        // TODO: check email format
+        // check email format
+        else if !isValidEmail(EmailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""){
+            return "Email format invalid."
+        }
         return nil
+    }
+    
+    // Check if the email format is valid
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
     }
     
     //when any field is empty, add alert message
