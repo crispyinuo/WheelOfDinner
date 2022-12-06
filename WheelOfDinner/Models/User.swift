@@ -13,6 +13,7 @@ class User{
     let db = Firestore.firestore()
     // User Singleton to store the login user
     public static let shared = User()
+    let sharedModel = ResultModel.shared
     
     var isLoggedIn = false
     var location: String = ""
@@ -81,6 +82,7 @@ class User{
     func addToLikeList(bid: String){
         if !likeList.contains(bid) {
             likeList.append(bid)
+            sharedModel.likeListChanged = true
             let docRef = db.collection("users").document(self.uid)
             
             // Update the likeList of the user in Firebase
@@ -101,6 +103,7 @@ class User{
     func deleteFromLikeList(bid: String){
         if let idx = likeList.firstIndex(of: bid) {
             likeList.remove(at: idx)
+            sharedModel.likeListChanged = true
             let docRef = self.db.collection("users").document(self.uid)
             
             // Update the likeList of the user in Firebase

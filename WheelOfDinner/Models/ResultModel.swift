@@ -14,6 +14,8 @@ class ResultModel{
     let BASE_URL =  "https://api.yelp.com"
     public var businesslist:[Business] = []
     public var likelist:[Business] = []
+    // keep track of whether the like list has changed so that we don't need to reload it everytime
+    public var likeListChanged : Bool = false
     init(){
     }
     

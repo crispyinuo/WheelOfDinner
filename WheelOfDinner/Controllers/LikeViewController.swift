@@ -17,20 +17,23 @@ class LikeViewController: UITableViewController {
     let loadList = DispatchGroup()
     
     override func viewDidLoad() {
+        sharedModel.likeListChanged = true
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadLikeList()
+        if sharedModel.likeListChanged == true{
+            loadLikeList()
+        }
     }
     
     func loadLikeList(){
         sharedModel.likelist = []
         for bid in User.shared.likeList {
             self.loadList.enter()
-            sharedModel.getBusinessById(BusinessId: bid){business in
+            self.sharedModel.getBusinessById(BusinessId: bid){business in
             DispatchQueue.main.async {
                // self.tableView.reloadData()
             }
@@ -40,6 +43,8 @@ class LikeViewController: UITableViewController {
 
         self.loadList.notify(queue: DispatchQueue.main, execute: {
                 self.tableView.reloadData()
+                // Everytime after we load like list, set likeListChanged to false
+                self.sharedModel.likeListChanged = false
                 print("Finished all requests.")
             })
 
