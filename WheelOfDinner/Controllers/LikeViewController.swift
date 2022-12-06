@@ -17,7 +17,7 @@ class LikeViewController: UITableViewController {
     let loadList = DispatchGroup()
     
     override func viewDidLoad() {
-
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
         super.viewDidLoad()
     }
     
