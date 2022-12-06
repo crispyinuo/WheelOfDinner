@@ -118,9 +118,9 @@ extension MapViewController: ResultViewControllerDelegate{
         
         // everytime location changed, set businessListChanged to true
         sharedModel.businessListChanged = true
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         // Updating restaurants in UI Floating Panel & User location
         thisUser.setLocation(latitude: coordinates.latitude, longitude: coordinates.longitude)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
     }
 }
 

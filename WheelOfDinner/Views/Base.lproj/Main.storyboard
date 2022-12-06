@@ -734,18 +734,32 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Q08-OU-UZl"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlI-dc-NF2">
+                                <rect key="frame" x="149.66666666666666" y="674" width="75.666666666666657" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="SSX-nm-Zue"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="oRk-WO-zFa"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="0.53333333329999999" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log Out">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1IQ-AK-8bD"/>
                         <color key="backgroundColor" red="1" green="0.97254901960784312" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="rvY-0D-DDg" firstAttribute="centerX" secondItem="oo3-Kh-OYT" secondAttribute="centerX" id="JOK-aa-CTd"/>
+                            <constraint firstItem="1IQ-AK-8bD" firstAttribute="bottom" secondItem="NlI-dc-NF2" secondAttribute="bottom" constant="10" id="KLM-MH-IGt"/>
                             <constraint firstItem="fat-PL-McZ" firstAttribute="centerX" secondItem="Gow-Ih-yal" secondAttribute="centerX" id="ON8-uw-cB8"/>
                             <constraint firstItem="oo3-Kh-OYT" firstAttribute="top" secondItem="rvY-0D-DDg" secondAttribute="bottom" constant="10" id="QjL-rR-bM5"/>
                             <constraint firstItem="rvY-0D-DDg" firstAttribute="leading" secondItem="Gow-Ih-yal" secondAttribute="leadingMargin" id="Sdf-cg-GCe"/>
                             <constraint firstItem="rvY-0D-DDg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1IQ-AK-8bD" secondAttribute="top" constant="20" id="SmQ-ML-LSy"/>
+                            <constraint firstItem="NlI-dc-NF2" firstAttribute="centerX" secondItem="Gow-Ih-yal" secondAttribute="centerX" id="Wta-9O-eEG"/>
                             <constraint firstItem="oo3-Kh-OYT" firstAttribute="leading" secondItem="1IQ-AK-8bD" secondAttribute="leading" constant="20" id="eD6-TP-Q5c"/>
-                            <constraint firstItem="1IQ-AK-8bD" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fat-PL-McZ" secondAttribute="bottom" constant="50" id="eKC-PY-uhr"/>
                             <constraint firstItem="fat-PL-McZ" firstAttribute="top" secondItem="oo3-Kh-OYT" secondAttribute="bottom" constant="15" id="kD0-aX-Dfe"/>
+                            <constraint firstItem="NlI-dc-NF2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fat-PL-McZ" secondAttribute="bottom" constant="10" id="tIC-Xe-YWM"/>
                             <constraint firstItem="oo3-Kh-OYT" firstAttribute="centerY" secondItem="Gow-Ih-yal" secondAttribute="centerY" id="tde-ny-uQ6"/>
                             <constraint firstItem="oo3-Kh-OYT" firstAttribute="centerX" secondItem="Gow-Ih-yal" secondAttribute="centerX" id="ziq-6z-eYU"/>
                         </constraints>
