@@ -923,11 +923,11 @@
             </objects>
             <point key="canvasLocation" x="1853.8461538461538" y="-356.1611374407583"/>
         </scene>
-        <!--Draw-->
+        <!--Spin-->
         <scene sceneID="Var-2A-zob">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ACq-T9-ULl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Draw" image="circle.circle" catalog="system" id="w3R-G0-8qQ"/>
+                    <tabBarItem key="tabBarItem" title="Spin" image="circle.righthalf.fill" catalog="system" id="w3R-G0-8qQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fZF-FZ-h6n">
                         <rect key="frame" x="0.0" y="47" width="375" height="44"/>
@@ -953,7 +953,7 @@
         <image name="champagne" width="170.66667175292969" height="170.66667175292969"/>
         <image name="chicken_leg_fried" width="42.666667938232422" height="42.666667938232422"/>
         <image name="chili_pepper" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="circle.circle" catalog="system" width="128" height="123"/>
+        <image name="circle.righthalf.fill" catalog="system" width="128" height="123"/>
         <image name="fish_steak" width="170.66667175292969" height="170.66667175292969"/>
         <image name="heart.circle.fill" catalog="system" width="128" height="123"/>
         <image name="hotdog" width="170.66667175292969" height="170.66667175292969"/>
