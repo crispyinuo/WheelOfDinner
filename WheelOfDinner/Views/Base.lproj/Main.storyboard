@@ -715,9 +715,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2oc-KZ-CSp" customClass="Pi">
-                                <rect key="frame" x="30" y="314" width="330" height="216"/>
-                            </pickerView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Red Icon" translatesAutoresizingMaskIntoConstraints="NO" id="rvY-0D-DDg">
                                 <rect key="frame" x="24.333333333333343" y="151" width="341.33333333333326" height="128"/>
                                 <constraints>
@@ -725,32 +722,42 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fat-PL-McZ">
-                                <rect key="frame" x="157.66666666666666" y="560" width="75" height="50"/>
+                                <rect key="frame" x="157.66666666666666" y="562" width="75" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="6bS-EO-NHd"/>
-                                    <constraint firstAttribute="height" constant="50" id="cZw-DV-uIT"/>
+                                    <constraint firstAttribute="height" constant="45" id="cZw-DV-uIT"/>
                                 </constraints>
                                 <color key="tintColor" red="1" green="0.53333333329999999" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Start"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Spin"/>
+                                <connections>
+                                    <action selector="startButton:" destination="m1K-qu-eTP" eventType="touchUpInside" id="NB7-53-Q5e"/>
+                                </connections>
                             </button>
+                            <pickerView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oo3-Kh-OYT">
+                                <rect key="frame" x="20" y="297" width="350" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="XKc-qo-9dt"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1IQ-AK-8bD"/>
                         <color key="backgroundColor" red="1" green="0.97254901960784312" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="rvY-0D-DDg" firstAttribute="top" secondItem="1IQ-AK-8bD" secondAttribute="top" constant="60" id="951-Wc-Deu"/>
-                            <constraint firstItem="2oc-KZ-CSp" firstAttribute="centerY" secondItem="Gow-Ih-yal" secondAttribute="centerY" id="H7P-OT-sIu"/>
                             <constraint firstItem="fat-PL-McZ" firstAttribute="centerX" secondItem="Gow-Ih-yal" secondAttribute="centerX" id="ON8-uw-cB8"/>
-                            <constraint firstItem="2oc-KZ-CSp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="rvY-0D-DDg" secondAttribute="bottom" constant="20" id="VRK-Ur-fSh"/>
-                            <constraint firstItem="2oc-KZ-CSp" firstAttribute="centerX" secondItem="Gow-Ih-yal" secondAttribute="centerX" id="WHQ-Wp-cr1"/>
-                            <constraint firstItem="fat-PL-McZ" firstAttribute="top" secondItem="2oc-KZ-CSp" secondAttribute="bottom" constant="30" id="Xtq-P6-6GQ"/>
+                            <constraint firstItem="oo3-Kh-OYT" firstAttribute="leading" secondItem="1IQ-AK-8bD" secondAttribute="leading" constant="20" id="eD6-TP-Q5c"/>
                             <constraint firstItem="1IQ-AK-8bD" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fat-PL-McZ" secondAttribute="bottom" constant="50" id="eKC-PY-uhr"/>
                             <constraint firstItem="rvY-0D-DDg" firstAttribute="centerX" secondItem="Gow-Ih-yal" secondAttribute="centerX" id="eLM-Ku-9dd"/>
-                            <constraint firstItem="2oc-KZ-CSp" firstAttribute="leading" secondItem="1IQ-AK-8bD" secondAttribute="leading" constant="30" id="jIe-Sb-GOf"/>
-                            <constraint firstItem="1IQ-AK-8bD" firstAttribute="trailing" secondItem="2oc-KZ-CSp" secondAttribute="trailing" constant="30" id="meO-nJ-7RU"/>
+                            <constraint firstItem="fat-PL-McZ" firstAttribute="top" secondItem="oo3-Kh-OYT" secondAttribute="bottom" constant="15" id="kD0-aX-Dfe"/>
+                            <constraint firstItem="oo3-Kh-OYT" firstAttribute="centerY" secondItem="Gow-Ih-yal" secondAttribute="centerY" id="tde-ny-uQ6"/>
+                            <constraint firstItem="oo3-Kh-OYT" firstAttribute="centerX" secondItem="Gow-Ih-yal" secondAttribute="centerX" id="ziq-6z-eYU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bzt-UE-f1n"/>
+                    <connections>
+                        <outlet property="PickerView" destination="oo3-Kh-OYT" id="afm-2T-TRX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggT-Dw-f7n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -98,7 +98,7 @@ class User{
     }
     
     func deleteFromLikeList(bid: String){
-        if let idx = likeList.index(of: bid) {
+        if let idx = likeList.firstIndex(of: bid) {
             likeList.remove(at: idx)
             let docRef = self.db.collection("users").document(self.uid)
             

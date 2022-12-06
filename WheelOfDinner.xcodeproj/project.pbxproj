@@ -36,6 +36,7 @@
 		76350C16293D7CEE00FFF9FD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 76350C15293D7CEE00FFF9FD /* Kingfisher */; };
 		76350C18293D8CCB00FFF9FD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76350C17293D8CCB00FFF9FD /* User.swift */; };
 		7693842B293E0B5E002AE7AF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7693842A293E0B5E002AE7AF /* WebViewController.swift */; };
+		76A0E7FB293F4142001F0E0D /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0E7FA293F4142001F0E0D /* PickerViewController.swift */; };
 		76E491F9291C9EE4003254E7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 76E491F8291C9EE4003254E7 /* FirebaseAnalytics */; };
 		76E491FB291C9EE4003254E7 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 76E491FA291C9EE4003254E7 /* FirebaseAnalyticsSwift */; };
 		76E491FD291C9EE4003254E7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 76E491FC291C9EE4003254E7 /* FirebaseAuth */; };
@@ -103,6 +104,7 @@
 		76350C12293D7A9200FFF9FD /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		76350C17293D8CCB00FFF9FD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7693842A293E0B5E002AE7AF /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		76A0E7FA293F4142001F0E0D /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		76E4920E291C9F39003254E7 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		792F8F6669413391703DB32C /* Pods_WheelOfDinner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WheelOfDinner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8E28C6CB247388F3DBC337 /* Pods-WheelOfDinner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelOfDinner.debug.xcconfig"; path = "Target Support Files/Pods-WheelOfDinner/Pods-WheelOfDinner.debug.xcconfig"; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				76350C07293CB31C00FFF9FD /* HomeViewController.swift */,
 				760513FF293DAD670034807B /* LikeViewController.swift */,
 				7693842A293E0B5E002AE7AF /* WebViewController.swift */,
+				76A0E7FA293F4142001F0E0D /* PickerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				76051400293DAD670034807B /* LikeViewController.swift in Sources */,
 				76051402293DBA5F0034807B /* ResultViewController.swift in Sources */,
 				760E46CD29134F5F00C2FA15 /* AppDelegate.swift in Sources */,
+				76A0E7FB293F4142001F0E0D /* PickerViewController.swift in Sources */,
 				76350C18293D8CCB00FFF9FD /* User.swift in Sources */,
 				76350C08293CB31C00FFF9FD /* HomeViewController.swift in Sources */,
 				76350C032939753B00FFF9FD /* SignUpViewController.swift in Sources */,
