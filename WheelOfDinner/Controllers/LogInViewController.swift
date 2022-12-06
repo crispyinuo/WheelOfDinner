@@ -11,7 +11,7 @@ import Firebase
 
 class LogInViewController: UIViewController {
     
-    let myUser = UserModel.shared.thisUser;
+   // let myUser = UserModel.shared.thisUser;
 
     @IBOutlet weak var EmailTextField: UITextField!
     
