@@ -123,4 +123,17 @@ class User{
         }
     }
     
+    func LogOut(){
+        // Set default values for shared user when a user logout
+        isLoggedIn = false
+        location = ""
+        latitude = 34.0224
+        longitude =  -118.2851
+        
+        uid = ""
+        username = ""
+        likeList = []
+        resultList = []
+    }
+    
 }

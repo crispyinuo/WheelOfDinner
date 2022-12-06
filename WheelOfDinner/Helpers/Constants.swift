@@ -11,6 +11,7 @@ import UIKit
 struct Constants{
     struct Storyboard{
         static let homeViewController = "Homepage"
+        static let startViewController = "Startpage"
     }
     
     struct Color{

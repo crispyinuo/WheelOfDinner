@@ -92,4 +92,13 @@ class ResultModel{
     func getBusinessCount() -> Int{
         return businesslist.count
     }
+    
+    func LogOut(){
+        // Set default values for result model when a user logout
+        businesslist = []
+        likelist = []
+        likeListChanged = false
+        spinnerChanged  = false
+        businessListChanged  = false
+    }
 }

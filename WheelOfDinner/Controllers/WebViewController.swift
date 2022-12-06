@@ -9,11 +9,12 @@ import UIKit
 import WebKit
 
 class WebViewController: UIViewController, WKNavigationDelegate {
+    
+    public var selectedRestaurant: String!
 
     @IBOutlet weak var webView: WKWebView!
     
     @IBOutlet weak var ActivityIndicator: UIActivityIndicatorView!
-    public var selectedRestaurant: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
