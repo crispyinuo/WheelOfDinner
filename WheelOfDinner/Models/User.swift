@@ -79,11 +79,14 @@ class User{
         }
     }
     
-    func addToLikeList(bid: String){
+    func addToLikeList(bid: String) -> Bool{
+        // track if add successfully
+        var result: Bool = false
         if !likeList.contains(bid) {
+            result = true
             likeList.append(bid)
             sharedModel.likeListChanged = true
-            sharedModel.spinnerChanged = true
+            sharedModel.likeListLoad = false
             let docRef = db.collection("users").document(self.uid)
             
             // Update the likeList of the user in Firebase
@@ -99,13 +102,14 @@ class User{
         } else {
             print("Restaurant already exists")
         }
+        return result
     }
     
     func deleteFromLikeList(bid: String){
         if let idx = likeList.firstIndex(of: bid) {
             self.likeList.remove(at: idx)
             sharedModel.likeListChanged = true
-            sharedModel.spinnerChanged = true
+            sharedModel.likeListLoad = false
             let docRef = self.db.collection("users").document(self.uid)
             
             // Update the likeList of the user in Firebase

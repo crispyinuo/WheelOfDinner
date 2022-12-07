@@ -18,17 +18,21 @@ class LikeViewController: UITableViewController {
     
     override func viewDidLoad() {
         sharedModel.likeListChanged = true
+        sharedModel.likeListLoad = false
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if sharedModel.likeListChanged == true{
+        // likeListChanged but not loaded
+        if sharedModel.likeListChanged == true && sharedModel.likeListLoad == false {
             loadLikeList()
+        } else{
+            self.tableView.reloadData()
         }
     }
-    
+
     func loadLikeList(){
         sharedModel.likelist = []
         for bid in User.shared.likeList {
@@ -45,6 +49,7 @@ class LikeViewController: UITableViewController {
                 self.tableView.reloadData()
                 // Everytime after we load like list, set likeListChanged to false
                 self.sharedModel.likeListChanged = false
+                self.sharedModel.likeListLoad = true
                 print("Finished all requests.")
             })
 
@@ -61,9 +66,9 @@ class LikeViewController: UITableViewController {
         if editingStyle == .delete {
             if let bid = sharedModel.likelist[indexPath.row].id{
                            thisUser.deleteFromLikeList(bid: bid)
-            }
             sharedModel.likelist.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            }
         }
     }
     

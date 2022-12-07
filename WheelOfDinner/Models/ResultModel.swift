@@ -16,7 +16,7 @@ class ResultModel{
     public var likelist:[Business] = []
     // keep track of whether the like list/business list has changed so that we don't need to reload it everytime
     public var likeListChanged : Bool = false
-    public var spinnerChanged : Bool = false
+    public var likeListLoad: Bool = false
     public var businessListChanged : Bool = false
     init(){
     }
@@ -98,7 +98,7 @@ class ResultModel{
         businesslist = []
         likelist = []
         likeListChanged = false
-        spinnerChanged  = false
+        likeListLoad = false
         businessListChanged  = false
     }
 }

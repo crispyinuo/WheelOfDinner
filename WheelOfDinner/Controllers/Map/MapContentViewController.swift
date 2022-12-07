@@ -68,6 +68,8 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
         let result = sharedModel.businesslist[indexPath.row]
         let cell = tableview.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
         
+        cell.addButton.isEnabled = true
+        
         // restaurant name
         cell.RestaurantNameLabel.text = result.name ?? "No name"
         
@@ -116,8 +118,13 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
         
         //TODO: add restaurant to userLikes list
         if let id = selectedRestaurant.id{
-            thisUser.addToLikeList(bid: id)
-            print(selectedRestaurant.name!)
+            if(thisUser.addToLikeList(bid: id)){
+                sender.isEnabled = false
+                // print("\(selectedRestaurant.name ?? "No name")")
+            } else {
+                sender.isEnabled = false
+                showError("\(selectedRestaurant.name ?? "This restaurant") already exists in your likes!")
+            }
         }
     }
     
@@ -138,6 +145,13 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
            return CGFloat(100)
+    }
+    
+    //when error happen
+    func showError(_ message: String){
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true)
     }
 
 }

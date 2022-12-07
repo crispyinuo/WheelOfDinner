@@ -719,7 +719,7 @@
                                     <action selector="startButton:" destination="m1K-qu-eTP" eventType="touchUpInside" id="NB7-53-Q5e"/>
                                 </connections>
                             </button>
-                            <pickerView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oo3-Kh-OYT">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oo3-Kh-OYT">
                                 <rect key="frame" x="20" y="298" width="335" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="XKc-qo-9dt"/>
@@ -804,13 +804,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jwk-TQ-fVb">
-                                <rect key="frame" x="40" y="156.33333333333334" width="295" height="442.33333333333326"/>
+                                <rect key="frame" x="40" y="133.66666666666666" width="325" height="487.66666666666674"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Yellow Icon" translatesAutoresizingMaskIntoConstraints="NO" id="d75-yy-Pd2">
-                                        <rect key="frame" x="0.0" y="20" width="295" height="154.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="20" width="325" height="170.66666666666666"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Dinner Is..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ja-Vg-TWG">
-                                        <rect key="frame" x="93.666666666666657" y="184.66666666666666" width="108" height="25"/>
+                                        <rect key="frame" x="108.66666666666666" y="200.66666666666666" width="108" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="QpK-HD-0RE"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="ygx-XV-s8z"/>
@@ -820,16 +820,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FXJ-w4-p9N">
-                                        <rect key="frame" x="20" y="209.66666666666669" width="255" height="178.66666666666669"/>
+                                        <rect key="frame" x="20" y="225.66666666666663" width="285" height="203"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cEm-FR-mXZ">
-                                                <rect key="frame" x="74" y="26" width="107" height="107"/>
+                                                <rect key="frame" x="81.666666666666657" y="36.333333333333378" width="121.66666666666666" height="121.66666666666669"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="cEm-FR-mXZ" secondAttribute="height" id="nt3-wf-lc7"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uv-lA-2Z4">
-                                                <rect key="frame" x="101.33333333333334" y="143" width="52.333333333333343" height="30"/>
+                                                <rect key="frame" x="116.33333333333333" y="168.00000000000006" width="52.333333333333329" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="uvJ-I0-Ev0"/>
                                                 </constraints>
@@ -840,7 +840,7 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="8uv-lA-2Z4" firstAttribute="centerX" secondItem="FXJ-w4-p9N" secondAttribute="centerX" id="9Le-HD-eo9"/>
-                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8uv-lA-2Z4" secondAttribute="bottom" constant="5" id="SMw-cv-boq"/>
+                                            <constraint firstAttribute="bottom" secondItem="8uv-lA-2Z4" secondAttribute="bottom" constant="5" id="SMw-cv-boq"/>
                                             <constraint firstItem="8uv-lA-2Z4" firstAttribute="top" secondItem="cEm-FR-mXZ" secondAttribute="bottom" constant="10" id="W06-7S-k7X"/>
                                             <constraint firstItem="cEm-FR-mXZ" firstAttribute="centerY" secondItem="FXJ-w4-p9N" secondAttribute="centerY" constant="-10" id="Xo6-Sy-8FG"/>
                                             <constraint firstItem="cEm-FR-mXZ" firstAttribute="height" secondItem="FXJ-w4-p9N" secondAttribute="height" multiplier="0.6" id="XqZ-y3-cjn"/>
@@ -850,7 +850,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLR-4r-bx2">
-                                        <rect key="frame" x="103.66666666666666" y="388.33333333333326" width="88" height="44"/>
+                                        <rect key="frame" x="118.66666666666666" y="433.66666666666674" width="88" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="RLR-4r-bx2" secondAttribute="height" multiplier="2:1" id="9At-ve-JdI"/>
                                             <constraint firstAttribute="height" constant="44" id="BmN-qm-Wol"/>
@@ -874,9 +874,9 @@
                                     <constraint firstItem="FXJ-w4-p9N" firstAttribute="centerX" secondItem="Jwk-TQ-fVb" secondAttribute="centerX" id="QtI-hF-jRn"/>
                                     <constraint firstItem="FXJ-w4-p9N" firstAttribute="leading" secondItem="Jwk-TQ-fVb" secondAttribute="leading" constant="20" id="SHR-MA-Ew3"/>
                                     <constraint firstItem="d75-yy-Pd2" firstAttribute="centerX" secondItem="Jwk-TQ-fVb" secondAttribute="centerX" id="WIJ-v7-7If"/>
-                                    <constraint firstItem="RLR-4r-bx2" firstAttribute="top" secondItem="FXJ-w4-p9N" secondAttribute="bottom" id="XHr-dK-PHX"/>
                                     <constraint firstItem="FXJ-w4-p9N" firstAttribute="centerX" secondItem="Jwk-TQ-fVb" secondAttribute="centerX" id="YbI-xK-zks"/>
                                     <constraint firstItem="RLR-4r-bx2" firstAttribute="centerX" secondItem="Jwk-TQ-fVb" secondAttribute="centerX" id="dby-Js-KPL"/>
+                                    <constraint firstItem="RLR-4r-bx2" firstAttribute="top" secondItem="FXJ-w4-p9N" secondAttribute="bottom" constant="5" id="eP4-Q6-mjL"/>
                                     <constraint firstItem="FXJ-w4-p9N" firstAttribute="top" secondItem="8Ja-Vg-TWG" secondAttribute="bottom" id="lUE-mt-sva"/>
                                     <constraint firstAttribute="bottom" secondItem="RLR-4r-bx2" secondAttribute="bottom" constant="10" id="r9m-oA-6ZG"/>
                                     <constraint firstItem="8Ja-Vg-TWG" firstAttribute="centerX" secondItem="Jwk-TQ-fVb" secondAttribute="centerX" id="uIH-XA-0TE"/>
@@ -936,7 +936,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Already have an account? Log In!"/>
                                 <connections>
                                     <action selector="LogInRedirectionDidTapped:" destination="CUf-xr-4uB" eventType="touchUpInside" id="exi-y8-QSy"/>
-                                    <segue destination="bBj-jY-VMs" kind="showDetail" id="7Tz-N8-Vvi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nba-ad-DKw">
@@ -1046,9 +1045,6 @@
             <point key="canvasLocation" x="908" y="1042"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="BFA-3C-5Ou"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.53333333329999999" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
         <image name="Red Icon" width="341.33334350585938" height="341.33334350585938"/>

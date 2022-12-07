@@ -40,12 +40,14 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 self.performSegue(withIdentifier: "PopUp", sender: Int(newValue))
             })
         }else{
-            // TODO: display alert
+            // display alert
+            showAlert("You don't have any likes yet! Add at least one!")
         }
     }
     
     override func viewDidLoad() {
-        sharedModel.spinnerChanged = true
+        sharedModel.likeListChanged = true
+        sharedModel.likeListLoad = false
         super.viewDidLoad()
         PickerView.delegate = self
         PickerView.dataSource = self
@@ -53,9 +55,12 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if sharedModel.spinnerChanged == true{
+        if sharedModel.likeListChanged == true && sharedModel.likeListLoad == false{
             loadLikeList()
+        } else {
+            self.PickerView.reloadAllComponents()
         }
+        // Everytime after we load like lis
     }
     
     func loadLikeList(){
@@ -72,9 +77,10 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 
         self.loadList.notify(queue: DispatchQueue.main, execute: {
             self.PickerView.reloadAllComponents()
-                // Everytime after we load like list, set spinnerChanged to false
-                self.sharedModel.spinnerChanged = false
-                print("Finished all requests.")
+            // Everytime after we load like list, set spinnerChanged to false
+            self.sharedModel.likeListChanged = false
+            self.sharedModel.likeListLoad = true
+            print("Finished all requests.")
             })
     }
     
@@ -103,6 +109,13 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
           }
         self.dismiss(animated: true, completion: nil)
         //
+    }
+    
+    //when there is no likelist
+    func showAlert(_ message: String){
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true)
     }
 
 

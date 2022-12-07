@@ -49,12 +49,8 @@ class SignUpViewController: UIViewController {
                 }
                 else{
                     // Create the user
-//                    let db = Firestore.firestore()
                     User.shared.initializeUser(username: username, uid: result!.user.uid)
                     User.shared.FetchData(uid: result!.user.uid)
-//                    db.collection("users").document(result!.user.uid).setData(["username":username, "uid": result!.user.uid]){ error in
-//                        self.showError("Error saving user data.")
-//                    }
                     // Transition to the home page
                     self.transitionToHome()
                 }
@@ -64,6 +60,7 @@ class SignUpViewController: UIViewController {
     }
     
      @IBAction func LogInRedirectionDidTapped(_ sender: UIButton) {
+         self.dismiss(animated: true, completion: nil)
      }
     
   
