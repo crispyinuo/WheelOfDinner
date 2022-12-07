@@ -763,7 +763,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GJW3JH36GW;
+				DEVELOPMENT_TEAM = RQQFS8372V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WheelOfDinner/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Wheel Of Dinner";
@@ -797,7 +797,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GJW3JH36GW;
+				DEVELOPMENT_TEAM = RQQFS8372V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WheelOfDinner/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Wheel Of Dinner";

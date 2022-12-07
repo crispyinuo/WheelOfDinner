@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController, UITextFieldDelegate {
     
    // let myUser = UserModel.shared.thisUser;
 
@@ -18,10 +18,6 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var PasswordTextField: UITextField!
     
     @IBOutlet weak var LogInButton: UIButton!
-    
-    @IBOutlet weak var SignUpRedirectButton: UIButton!
-    
-    @IBOutlet weak var forgetPasswordButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,8 +56,21 @@ class LogInViewController: UIViewController {
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == EmailTextField {
+            textField.resignFirstResponder()
+            PasswordTextField.becomeFirstResponder()
+        } else if textField ==  PasswordTextField {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
 
     @IBAction func SignUpRedirectionDidTapped(_ sender: UIButton) {
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     // if the fields are not correct, return error message
@@ -70,7 +79,6 @@ class LogInViewController: UIViewController {
         if  EmailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || PasswordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
             return "Please fill in both fields."
         }
-        //TODO: check email format
         return nil
     }
     
