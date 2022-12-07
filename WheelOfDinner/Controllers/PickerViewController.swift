@@ -84,7 +84,7 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     func loadLikeList(){
         let loadList = DispatchGroup()
         let loadQueue = DispatchQueue.global(qos: .background)
-        let semaphore = DispatchSemaphore(value: 3)
+        let semaphore = DispatchSemaphore(value: 2)
         print("start reloading")
         sharedModel.likelist = []
         for bid in User.shared.likeList {

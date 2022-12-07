@@ -115,19 +115,19 @@ class LikeViewController: UITableViewController {
            return CGFloat(100)
     }
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-//        performSegue(withIdentifier: "LikeDetail", sender: indexPath)
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        performSegue(withIdentifier: "LikeDetail", sender: indexPath)
+    }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "LikeDetail" {
-//            let WebDetailVC = segue.destination as! WebViewController
-//                // let indexPath = tableView.indexPath.row
-//            WebDetailVC.selectedRestaurant = sharedModel.businesslist[(sender as! IndexPath).row].url
-//            self.tableView.reloadData()
-//        }
-//        self.dismiss(animated: true, completion: nil)
-//        //
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "LikeDetail" {
+            let WebDetailVC = segue.destination as! WebViewController
+                // let indexPath = tableView.indexPath.row
+            WebDetailVC.selectedRestaurant = sharedModel.likelist[(sender as! IndexPath).row].url
+            self.tableView.reloadData()
+        }
+        self.dismiss(animated: true, completion: nil)
+        //
+    }
         
 }
