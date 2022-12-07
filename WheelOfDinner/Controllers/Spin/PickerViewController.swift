@@ -71,55 +71,6 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         // Everytime after we load like lis
     }
     
-//    func loadLikeList(){
-//        let loadList = DispatchGroup()
-//        sharedModel.likelist = []
-//        for bid in User.shared.likeList {
-//            loadList.enter()
-//            self.sharedModel.getBusinessById(BusinessId: bid){business in
-//            DispatchQueue.main.async {
-//                loadList.leave()
-//            }
-//            }
-//        }
-//
-//        loadList.notify(queue: DispatchQueue.main, execute: {
-//            self.PickerView.reloadAllComponents()
-//            // Everytime after we load like list, set spinnerChanged to false
-//            self.sharedModel.likeListChanged = false
-//            self.sharedModel.likeListLoad = true
-//            print("Finished all requests.")
-//            })
-//    }
-//    
-    func loadLikeList(){
-        let loadList = DispatchGroup()
-        let loadQueue = DispatchQueue.global(qos: .background)
-        let semaphore = DispatchSemaphore(value: 2)
-        print("start reloading")
-        sharedModel.likelist = []
-        for bid in User.shared.likeList {
-            loadQueue.async(group: loadList){
-                semaphore.wait()
-                self.sharedModel.getBusinessById(BusinessId: bid){business in
-                    print("Done with \(business.name ?? "nope")")
-                    semaphore.signal()
-                }
-                Thread.sleep(forTimeInterval: 1)
-            }
-        }
-
-        loadList.notify(queue: DispatchQueue.main, execute: {
-            print("finish reloading")
-            // Everytime after we load like list, set likeListChanged to false
-                self.sharedModel.likeListChanged = false
-                self.sharedModel.likeListLoad = true
-            self.PickerView.reloadAllComponents()
-                print("Finished all requests.")
-            })
-
-    }
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
