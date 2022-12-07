@@ -52,11 +52,22 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if sharedModel.likeListChanged == true && sharedModel.likeListLoad == false{
-            loadLikeList()
-        } else {
+        
+        super.viewDidAppear(animated)
+        // Wait until the first load complete & loading additional business if there is one
+        sharedModel.loadList.wait()
+        sharedModel.loadList.notify(queue: DispatchQueue.main, execute: {
+            print("check finish all likelist loading")
+            // Everytime after we load like list, set likeListChanged to false
             self.PickerView.reloadAllComponents()
-        }
+                print("Finished all requests.")
+            })
+        
+//        if sharedModel.likeListChanged == true && sharedModel.likeListLoad == false{
+//            loadLikeList()
+//        } else {
+//            self.PickerView.reloadAllComponents()
+//        }
         // Everytime after we load like lis
     }
     

@@ -17,7 +17,10 @@ class ResultModel{
     // keep track of whether the like list/business list has changed so that we don't need to reload it everytime
     public var likeListChanged : Bool = true
     public var likeListLoad: Bool = false
+    public var startFirstLoad : Bool = false
+    public var endFirstLoad: Bool = false
     public var businessListChanged : Bool = false
+    public let loadList = DispatchGroup()
     init(){
     }
     
@@ -85,6 +88,38 @@ class ResultModel{
         }
     }
     
+    func firstloadLikeList(){
+        startFirstLoad = true
+        let loadQueue = DispatchQueue.global(qos: .background)
+        let semaphore = DispatchSemaphore(value: 2)
+        print("start first reloading")
+        self.likelist = []
+        for bid in User.shared.likeList {
+            loadQueue.async(group: loadList){
+                semaphore.wait()
+                self.getBusinessById(BusinessId: bid){business in
+                    print("Done with \(business.name ?? "nope")")
+                    Thread.sleep(forTimeInterval: 0.5)
+                    semaphore.signal()
+                }
+            }
+        }
+//        loadList.wait()
+//        loadList.notify(queue: DispatchQueue.main, execute: {
+//            print("finish first reloading")
+//            // Everytime after we load like list, set likeListChanged to false
+//                self.endFirstLoad = true
+//                print("Finished all requests.")
+//            })        loadList.wait()
+//        loadList.notify(queue: DispatchQueue.main, execute: {
+//            print("finish first reloading")
+//            // Everytime after we load like list, set likeListChanged to false
+//                self.endFirstLoad = true
+//                print("Finished all requests.")
+//            })
+
+    }
+    
     struct SearchResult : Decodable{
         let businesses : [Business]
     }
@@ -99,6 +134,8 @@ class ResultModel{
         likelist = []
         likeListChanged = true
         likeListLoad = false
+        startFirstLoad = false
+        endFirstLoad = false
         businessListChanged  = false
     }
 }

@@ -49,6 +49,7 @@ class User{
                         self.resultList = data["resultList"] as? [String] ?? []
                     }
                 print("Fetching data from: \(self.username)")
+                self.sharedModel.firstloadLikeList()
             } else {
                 print("User does not exist")
             }
@@ -99,6 +100,22 @@ class User{
                     print("LikeList successfully updated")
                 }
             }
+            
+            // load the current business and add it the shared model
+            // only execute after the first load
+            sharedModel.loadList.wait()
+            sharedModel.loadList.notify(queue: DispatchQueue.main, execute: {
+                print("finish first reloading")
+                // After we loaded like list, add new item to current likelist
+                self.sharedModel.loadList.enter()
+                self.sharedModel.getBusinessById(BusinessId: bid){business in
+                    DispatchQueue.main.async {
+                        // load the business and add it to the sharedModel.likelist
+                        self.sharedModel.loadList.leave()
+                        print("Added business \(business.name ?? "nope")")
+                    }
+                }
+            })
         } else {
             print("Restaurant already exists")
         }

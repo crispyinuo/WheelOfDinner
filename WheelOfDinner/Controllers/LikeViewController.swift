@@ -22,13 +22,26 @@ class LikeViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // likeListChanged but not loaded
-        if sharedModel.likeListChanged == true && sharedModel.likeListLoad == false {
-            loadLikeList()
-        } else {
-            print("tableview reloading")
+        // Wait until the first load complete & loading additional business if there is one
+        sharedModel.loadList.wait()
+        sharedModel.loadList.notify(queue: DispatchQueue.main, execute: {
+            print("check finish all likelist loading")
+            // Everytime after we load like list, set likeListChanged to false
             self.tableView.reloadData()
-        }
+                print("Finished all requests.")
+            })
+        
+//        // login in data loaded
+//        if(sharedModel.startFirstLoad == true && sharedModel.endFirstLoad == true){
+//
+//        }
+//        // likeListChanged but not loaded
+//        if sharedModel.likeListChanged == true && sharedModel.likeListLoad == false {
+//            loadLikeList()
+//        } else {
+//            print("tableview reloading")
+//            self.tableView.reloadData()
+//        }
     }
 
     func loadLikeList(){
