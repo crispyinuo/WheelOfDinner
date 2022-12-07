@@ -18,7 +18,7 @@ struct Business: Codable {
     let coordinates: Coordinates?
     let image_url: String?
     let location: Location?
-    let is_closed: Bool?
+    let distance: Double?
 
 //    enum CodingKeys: String, CodingKey {
 //        case rating, price, id, categories

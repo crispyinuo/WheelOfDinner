@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
 import Kingfisher
 
 class MapContentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -86,17 +85,14 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
         // restaurant rating
         cell.RatingLabel.text = "Rating: \( String(result.rating ?? 0))"
         
-        // if the restaurant is closed
-        if let closed = result.is_closed{
-            if(closed == true){
-                cell.isOpenLabel.text = "Closed now"
-                cell.isOpenLabel.textColor = UIColor.red
-            }else{
-                cell.isOpenLabel.text = "Open"
-                cell.isOpenLabel.textColor = UIColor.systemGreen
-            }
+        // set restaurant distance
+        if let dis = result.distance{
+            // convert from meter to mile
+            let mile = dis/1609.344
+            cell.distanceLabel.text = "\(String(format: "%.1f", mile)) m"
+    
         }else{
-            cell.isOpenLabel.text = ""
+            cell.distanceLabel.text = ""
         }
         
         // restaurant location

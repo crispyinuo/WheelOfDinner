@@ -31,9 +31,17 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     @IBAction func startButton(_ sender: UIButton) {
-        let newValue = arc4random_uniform(UInt32(sharedModel.likelist.count))
-        self.PickerView.selectRow(Int(newValue), inComponent: 0, animated: true)
-        self.PickerView.reloadComponent(0)
+        if sharedModel.likelist.count > 0 {
+            let newValue = arc4random_uniform(UInt32(sharedModel.likelist.count))
+            self.PickerView.selectRow(Int(newValue), inComponent: 0, animated: true)
+            self.PickerView.reloadComponent(0)
+            // wait a couple of seconds before performing segue
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                self.performSegue(withIdentifier: "PopUp", sender: Int(newValue))
+            })
+        }else{
+            // TODO: display alert
+        }
     }
     
     override func viewDidLoad() {
@@ -80,6 +88,21 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
         return sharedModel.likelist[row].name
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PopUp" {
+            guard let PopUpVC = segue.destination as? PopUpViewController
+            else {
+                self.dismiss(animated: true, completion: nil)
+                return
+            }
+            let result = sharedModel.likelist[sender as! Int]
+            PopUpVC.name = result.name ?? ""
+            PopUpVC.ImageURL = result.image_url ?? ""
+          }
+        self.dismiss(animated: true, completion: nil)
+        //
     }
 
 

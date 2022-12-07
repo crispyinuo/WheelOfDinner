@@ -15,7 +15,7 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var ReviewLabel: UILabel!
     
-    @IBOutlet weak var isOpenLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
     
     @IBOutlet weak var LocationLabel: UILabel!
     

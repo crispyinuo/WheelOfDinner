@@ -90,19 +90,6 @@ class LikeViewController: UITableViewController {
             // restaurant rating
             cell.RatingLabel.text = "Rating: \( String(result.rating ?? 0))"
             
-            // if the restaurant is closed
-            if let closed = result.is_closed{
-                if(closed == true){
-                    cell.isOpenLabel.text = "Closed now"
-                    cell.isOpenLabel.textColor = UIColor.red
-                }else{
-                    cell.isOpenLabel.text = "Open"
-                    cell.isOpenLabel.textColor = UIColor.systemGreen
-                }
-            }else{
-                cell.isOpenLabel.text = ""
-            }
-            
             // restaurant location
             cell.LocationLabel.text = (result.location?.address1) ?? "No detail location"
             
