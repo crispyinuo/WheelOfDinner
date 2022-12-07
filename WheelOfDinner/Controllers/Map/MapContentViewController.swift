@@ -116,9 +116,12 @@ class MapContentViewController: UIViewController, UITableViewDelegate, UITableVi
         let indexpath1 = IndexPath(row: sender.tag, section: 0)
         let selectedRestaurant = sharedModel.businesslist[indexpath1.row]
         
-        //TODO: add restaurant to userLikes list
-        if let id = selectedRestaurant.id{
-            if(thisUser.addToLikeList(bid: id)){
+        // add restaurant to userLikes list
+        if let id = selectedRestaurant.id {
+            if(thisUser.likeList.count >= 9){
+                showError("You already have no less than 9 restaurants in your like lists! Delete some before adding more!")
+            }
+            else if(thisUser.addToLikeList(bid: id)){
                 sender.isEnabled = false
                 // print("\(selectedRestaurant.name ?? "No name")")
             } else {

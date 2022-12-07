@@ -15,7 +15,7 @@ class ResultModel{
     public var businesslist:[Business] = []
     public var likelist:[Business] = []
     // keep track of whether the like list/business list has changed so that we don't need to reload it everytime
-    public var likeListChanged : Bool = false
+    public var likeListChanged : Bool = true
     public var likeListLoad: Bool = false
     public var businessListChanged : Bool = false
     init(){
@@ -97,7 +97,7 @@ class ResultModel{
         // Set default values for result model when a user logout
         businesslist = []
         likelist = []
-        likeListChanged = false
+        likeListChanged = true
         likeListLoad = false
         businessListChanged  = false
     }

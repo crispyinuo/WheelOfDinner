@@ -82,7 +82,7 @@ class User{
     func addToLikeList(bid: String) -> Bool{
         // track if add successfully
         var result: Bool = false
-        if !likeList.contains(bid) {
+        if !bid.isEmpty && !likeList.contains(bid) {
             result = true
             likeList.append(bid)
             sharedModel.likeListChanged = true

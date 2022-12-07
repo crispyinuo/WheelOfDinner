@@ -14,47 +14,50 @@ class LikeViewController: UITableViewController {
     // Swift Singleton pattern
     let sharedModel = ResultModel.shared
     let thisUser = User.shared
-    let loadList = DispatchGroup()
     
     override func viewDidLoad() {
-        sharedModel.likeListChanged = true
-        sharedModel.likeListLoad = false
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         // likeListChanged but not loaded
         if sharedModel.likeListChanged == true && sharedModel.likeListLoad == false {
             loadLikeList()
-        } else{
+        } else {
+            print("tableview reloading")
             self.tableView.reloadData()
         }
     }
 
     func loadLikeList(){
+        let loadList = DispatchGroup()
+        let loadQueue = DispatchQueue.global(qos: .background)
+        let semaphore = DispatchSemaphore(value: 2)
+        print("start reloading")
         sharedModel.likelist = []
         for bid in User.shared.likeList {
-            self.loadList.enter()
-            self.sharedModel.getBusinessById(BusinessId: bid){business in
-            DispatchQueue.main.async {
-               // self.tableView.reloadData()
-            }
-            self.loadList.leave()
+            loadQueue.async(group: loadList){
+                semaphore.wait()
+                self.sharedModel.getBusinessById(BusinessId: bid){business in
+                    print("Done with \(business.name ?? "nope")")
+                    semaphore.signal()
+                }
+                Thread.sleep(forTimeInterval: 1)
             }
         }
-
-        self.loadList.notify(queue: DispatchQueue.main, execute: {
-                self.tableView.reloadData()
-                // Everytime after we load like list, set likeListChanged to false
+        loadList.wait()
+        loadList.notify(queue: DispatchQueue.main, execute: {
+            print("finish reloading")
+            // Everytime after we load like list, set likeListChanged to false
                 self.sharedModel.likeListChanged = false
                 self.sharedModel.likeListLoad = true
+                self.tableView.reloadData()
                 print("Finished all requests.")
             })
 
     }
-    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -111,5 +114,20 @@ class LikeViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
            return CGFloat(100)
     }
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+//        performSegue(withIdentifier: "LikeDetail", sender: indexPath)
+//    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "LikeDetail" {
+//            let WebDetailVC = segue.destination as! WebViewController
+//                // let indexPath = tableView.indexPath.row
+//            WebDetailVC.selectedRestaurant = sharedModel.businesslist[(sender as! IndexPath).row].url
+//            self.tableView.reloadData()
+//        }
+//        self.dismiss(animated: true, completion: nil)
+//        //
+//    }
         
 }

@@ -20,7 +20,6 @@
 		760E46E429134F6000C2FA15 /* WheelOfDinnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760E46E329134F6000C2FA15 /* WheelOfDinnerTests.swift */; };
 		760E46EE29134F6000C2FA15 /* WheelOfDinnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760E46ED29134F6000C2FA15 /* WheelOfDinnerUITests.swift */; };
 		760E46F029134F6000C2FA15 /* WheelOfDinnerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760E46EF29134F6000C2FA15 /* WheelOfDinnerUITestsLaunchTests.swift */; };
-		761895CD29189ED2000C137E /* YelpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761895CC29189ED2000C137E /* YelpAPI.swift */; };
 		761895CF2918A415000C137E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761895CE2918A415000C137E /* MapViewController.swift */; };
 		761895D12918D8EF000C137E /* MapContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761895D02918D8EF000C137E /* MapContentViewController.swift */; };
 		761895D42918DCA0000C137E /* FloatingPanel in Frameworks */ = {isa = PBXBuildFile; productRef = 761895D32918DCA0000C137E /* FloatingPanel */; };
@@ -91,7 +90,6 @@
 		760E46E929134F6000C2FA15 /* WheelOfDinnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WheelOfDinnerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		760E46ED29134F6000C2FA15 /* WheelOfDinnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelOfDinnerUITests.swift; sourceTree = "<group>"; };
 		760E46EF29134F6000C2FA15 /* WheelOfDinnerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelOfDinnerUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		761895CC29189ED2000C137E /* YelpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPI.swift; sourceTree = "<group>"; };
 		761895CE2918A415000C137E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		761895D02918D8EF000C137E /* MapContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContentViewController.swift; sourceTree = "<group>"; };
 		762D8FC6293F018000500F19 /* LikeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeTableViewCell.swift; sourceTree = "<group>"; };
@@ -266,7 +264,6 @@
 		760E46FF291351E900C2FA15 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				761895CC29189ED2000C137E /* YelpAPI.swift */,
 				76E4920E291C9F39003254E7 /* Firebase.swift */,
 				76051405293DD23F0034807B /* GooglePlacesManager.swift */,
 			);
@@ -565,7 +562,6 @@
 				76051406293DD23F0034807B /* GooglePlacesManager.swift in Sources */,
 				76E4920F291C9F39003254E7 /* Firebase.swift in Sources */,
 				76A0E7FD29403632001F0E0D /* PopUpViewController.swift in Sources */,
-				761895CD29189ED2000C137E /* YelpAPI.swift in Sources */,
 				761895D12918D8EF000C137E /* MapContentViewController.swift in Sources */,
 				76350C13293D7A9200FFF9FD /* Business.swift in Sources */,
 				760E46D129134F5F00C2FA15 /* ViewController.swift in Sources */,
